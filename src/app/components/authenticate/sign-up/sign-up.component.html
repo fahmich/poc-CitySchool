@@ -12,8 +12,11 @@
           <input type="password" class="formControl" placeholder="Password" #userPwd required>
         </div>
   
-        <div class="formGroup">
-          <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+        <div class="formGroup"> 
+          <button type="button" class="btn btn-info"
+          (click)="authService.SignUp(userEmail.value, userPwd.value)">Sign Up</button>
+    
+        
         </div>
   
         <div class="formGroup">
