@@ -119,7 +119,7 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
-      codefamille : "00052" ,
+      codefamille : "this.generateCodeFamily()" ,
     }
     return userRef.set(userData, { merge: true   })
   }

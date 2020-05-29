@@ -1,7 +1,18 @@
-<div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+<div class="bg-light  ">
     <div class="my-3 p-3">
-      <h2 class="display-5">Another headline</h2>
-      <p class="lead">And an even wittier subheading.</p>
+      <h2 class="display-5">parents space</h2>
+     
     </div>
-    <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    <div class=" mx-auto" style="width: 80%; border-radius: 21px 21px 0 0;">
+    
+      <div class="row" *ngIf="authService.userData as user">      
+            <div class="media-body">
+               <p>Email: <strong>{{user.email}}</strong></p>
+               <p>code famille: <strong>{{(user.codefamille) ? user.codefamille : 'null'}}</strong></p>   
+            </div>
+       
+        <app-parent></app-parent>
+      </div>
+    
+    </div>
   </div>
