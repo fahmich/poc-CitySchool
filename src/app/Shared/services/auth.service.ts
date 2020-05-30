@@ -4,6 +4,7 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
+import { UserService } from './firebase-services/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,48 +12,58 @@ import { Router } from "@angular/router";
 })
 
 export class AuthService {
-  userData: any; // Save logged in user data
+  userData: any;
+  codedefamille: any; // Save logged in user data
   codefamily:any
 
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
-    public ngZone: NgZone // NgZone service to remove outside scope warning
-   
+    public ngZone: NgZone, // NgZone service to remove outside scope warning
+    private userService:UserService
   ) {
     /* Saving user data in localstorage when
     logged in and setting up null when logged out */
     this.afAuth.authState.subscribe(user => {
-      console.log('iosio')
-      console.log(user)
-      console.log('iosio')
-
       if (user) {
         this.userData = user;
 
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user'));
+
+        localStorage.setItem('codedefamille', 
+        JSON.stringify(this.codedefamille));
       } else {
         localStorage.setItem('user', null);
         JSON.parse(localStorage.getItem('user'));
       }
     })
   }
-
-  // Sign in with email/password
-  SignIn(codefamille,email, password) {
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
-        });
-        this.SetUserData(result.user);
-        console.log("this is my code ",result.user)
-      })
  
-  }
+  async SignIn(codefamille,email, password) {
+    return  this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .then(async (result) => {
+     
+      this.ngZone.run(async () => { 
+        this.afAuth.user.subscribe(res=>{
+        this.userService.getUser(res.uid).subscribe((item:any)=>{
+         
+          this.userData=item
+          if(item.codefamille ===codefamille ){
+           this.router.navigate(['dashboard']);
+            } else{
+            alert("Vous n'êtes pas autorisé !!:")
+           }
+        })        
+      })
+       });     
+      }).catch((error) => {
+        window.alert(error.message)
+      })
+  } 
 
+  
   // Sign up with email/password
   SignUp(email, password) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
@@ -60,14 +71,26 @@ export class AuthService {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */     
         this.SetUserDatawithnewcodefamily(result.user);
+
+        this.userService.getUser(result.user.uid).subscribe((item:any)=>{
+           this.codedefamille=item.codefamille})
+    
         this.SendVerificationMail();
-      }).catch((error) => {
+       }).catch((error) => {
         window.alert(error.message)
       })
   }
 
   generateCodeFamily() {
-    this.codefamily="f-00212"
+    // var washingtonRef = this.afs.collection("users").doc('DC');
+
+    // Atomically increment the population of the city by 50.
+    //   washingtonRef.update({
+    // population: firebase.firestore.FieldValue.increment(50)
+    // });
+    var year = `${(new Date()).getFullYear()}`;
+    var code1 = year.substring(0,2);
+    this.codefamily=`F-${code1}`;
     return this.codefamily 
   }
   // Send email verfificaiton when new user sign up
@@ -91,7 +114,10 @@ export class AuthService {
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : false;
+    console.log("AAA",user)
+   // return (user !== null && user.emailVerified !== false) ? true : false;
+     return (user !== null ) ? true : false;
+
   }
  
   /* Setting up user data when sign in with username/password,
@@ -119,7 +145,8 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
-      codefamille : "this.generateCodeFamily()" ,
+      codefamille : user.codefamille  
+
     }
     return userRef.set(userData, { merge: true   })
   }

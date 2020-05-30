@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "poc-city-school"
+  "defaultProject": "poc-city-school",
+  "cli": {
+    "analytics": false
+  }
 }

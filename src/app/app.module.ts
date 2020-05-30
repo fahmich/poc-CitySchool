@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
  
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { MatSliderModule } from '@angular/material/slider';
 
 // App routing modules
@@ -25,10 +25,20 @@ import { EmailComponent } from './components/authenticate/email/email.component'
 import { NavgbarComponent } from './components/doshboard_element/navgbar/navgbar.component';
  import { ParentsSpaceComponent } from './components/doshboard_element/dashboard/parents-space/parents-space.component';
 import { ChildsSpaceComponent } from './components/doshboard_element/dashboard/childs-space/childs-space.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChildComponent } from './components/doshboard_element/dashboard/childs-space/child/child.component';
 import { ParentComponent } from './components/doshboard_element/dashboard/parents-space/parent/parent.component';
+import {MatTabsModule,} from '@angular/material/tabs';
+import {MatButtonModule} from '@angular/material/button';
+import { TabContentComponent } from './components/doshboard_element/dashboard/childs-space/tab-content.component';
+import { ContentContainerDirective } from './components/doshboard_element/dashboard/childs-space/content-container.directive';
+import { TabService } from './Shared/services/tabs.service';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
  
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,9 +51,20 @@ import { ParentComponent } from './components/doshboard_element/dashboard/parent
      ChildsSpaceComponent,
      ChildComponent,
      ParentComponent,
-      
+      TabContentComponent,
+     ContentContainerDirective,
+     
   ],
   imports: [
+    MatFormFieldModule,
+ 
+    MatSelectModule,
+    MatIconModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+    MatTabsModule ,
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase, 'fahmidb'),
@@ -53,7 +74,7 @@ import { ParentComponent } from './components/doshboard_element/dashboard/parent
     ReactiveFormsModule,
     NoopAnimationsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, TabService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

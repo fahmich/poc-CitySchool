@@ -1,1 +1,328 @@
-<p>child works!</p>
+<br><br>
+
+<div class="card">
+    <div class="card-header">
+        Information
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    </div>
+</div>
+<br><br>
+
+<div class="row">
+    <div class="  col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                Matière souhaités </div>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <div class="content" fxLayout="column" fxLayoutAlign="start start" fxFlex>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-lg-1 col-form-label">Math</label>
+                        <div class="col-lg-2">
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="col-lg-9 row" style="margin-top: -1%;">
+                            <div class="radio-toolbar ">
+                                <input type="radio" id="radioApple" name="formulepresentiel" value="apple">
+                                <label for="radioApple">Auccune</label>
+
+                                <input type="radio" id="radioBanana" name="formulepresentiel" value="banana">
+                                <label style="border-left: 0px" for="radioBanana">Anuelle</label>
+
+                                <input type="radio" id="radioOrange" name="formulepresentiel" value="orange">
+                                <label style="border-left: 0px" for="radioOrange">Trimestriel</label>
+                            </div>
+                            <div class="radio-toolbar">
+                                <input type="radio" id="Group" name="format" value="Group">
+                                <label for="Group">Group</label>
+                                <input type="radio" id="Particulier" name="format" value="Particulier">
+                                <label style="border-left: 0px" for="Particulier">Particulier</label>
+                            </div>
+                            <div class="radio-toolbar">
+                                <input type="radio" id="Auccune" name="formuleEnLinge" value="apple">
+                                <label for="Auccune">Auccune</label>
+                                <input type="radio" id="Anuelle" name="formuleEnLinge" value="banana">
+                                <label style="border-left: 0px" for="Anuelle">Anuelle</label>
+                                <input type="radio" id="Trimestriel" name="formuleEnLinge" value="orange">
+                                <label style="border-left: 0px" for="Trimestriel">Trimestriel</label>
+                            </div>
+                            <div class="example-button-container">
+                                <button *ngIf="!opencard1" (click)="open('math')" mat-fab color="primary">
+                                    <mat-icon>keyboard_arrow_down</mat-icon>
+                                </button>
+                                <button *ngIf="opencard1" (click)="open('math')" mat-fab color="primary">
+                                    <mat-icon>keyboard_arrow_up</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row" *ngIf="opencard1">
+                        <div class="col-lg-1">
+                        </div>
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-9 row">
+                            <div class="col-lg-7">
+                                <select class="browser-default custom-select">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                                <select class="browser-default custom-select">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content" fxLayout="column" fxLayoutAlign="start start" fxFlex>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-lg-1 col-form-label">Physique chime</label>
+                        <div class="col-lg-2">
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="col-lg-9 row" style="margin-top: -1%;">
+                            <div class="radio-toolbar ">
+                                <input type="radio" id="1" name="physquechimie" value="1">
+                                <label for="1">Auccune</label>
+                                <input type="radio" id="2" name="physquechimie" value="2">
+                                <label style="border-left: 0px" for="2">Anuelle</label>
+                                <input type="radio" id="3" name="physquechimie" value="3">
+                                <label style="border-left: 0px" for="3">Trimestriel</label>
+
+                            </div>
+                            <div class="radio-toolbar">
+                                <input type="radio" id="4" name="physquechimieformat" value="4">
+                                <label for="4">Group</label>
+                                <input type="radio" id="5" name="physquechimieformat" value="5">
+                                <label style="border-left: 0px" for="5">Particulier</label>
+                            </div>
+                            <div class="radio-toolbar">
+                                <input type="radio" id="6" name="physquechimieEnLinge" value="6">
+                                <label for="6">Auccune</label>
+                                <input type="radio" id="7" name="physquechimieEnLinge" value="7">
+                                <label style="border-left: 0px" for="7">Anuelle</label>
+                                <input type="radio" id="8" name="physquechimieEnLinge" value="8">
+                                <label style="border-left: 0px" for="8">Trimestriel</label>
+                            </div>
+                            <div class="example-button-container">
+                                <button *ngIf="!opencard2" (click)="open('Physique')" mat-fab color="primary">
+                                    <mat-icon>keyboard_arrow_down</mat-icon>
+                                </button>
+                                <button *ngIf="opencard2" (click)="open('Physique')" mat-fab color="primary">
+                                    <mat-icon>keyboard_arrow_up</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row" *ngIf="opencard2">
+                        <div class="col-lg-1">
+                        </div>
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-9 row">
+                            <div class="col-lg-7">
+                                <select class="browser-default custom-select">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                                <select class="browser-default custom-select">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content" fxLayout="column" fxLayoutAlign="start start" fxFlex>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-lg-1 col-form-label">Français</label>
+                        <div class="col-lg-2">
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="col-lg-9 row" style="margin-top: -1%;">
+                            <div class="radio-toolbar ">
+                                <input type="radio" id="9" name="Français" value="9">
+                                <label for="9">Auccune</label>
+                                <input type="radio" id="22" name="Français" value="22">
+                                <label style="border-left: 0px" for="22">Anuelle</label>
+                                <input type="radio" id="333" name="Français" value="3">
+                                <label style="border-left: 0px" for="3">Trimestriel</label>
+                            </div>
+                            <div class="radio-toolbar">
+                                <input type="radio" id="44" name="Françaisformat" value="44">
+                                <label for="44">Group</label>
+                                <input type="radio" id="55" name="Françaisformat" value="55">
+                                <label style="border-left: 0px" for="55">Particulier</label>
+                            </div>
+                            <div class="radio-toolbar">
+                                <input type="radio" id="66" name="FrançaisEnLinge" value="66">
+                                <label for="66">Auccune</label>
+                                <input type="radio" id="77" name="FrançaisEnLinge" value="77">
+                                <label style="border-left: 0px" for="77">Anuelle</label>
+                                <input type="radio" id="88" name="FrançaisEnLinge" value="88">
+                                <label style="border-left: 0px" for="88">Trimestriel</label>
+                            </div>
+                            <div class="example-button-container">
+                                <button *ngIf="!opencard3" (click)="open('francias')" mat-fab color="primary">
+                                    <mat-icon>keyboard_arrow_down</mat-icon>
+                                </button>
+                                <button *ngIf="opencard3" (click)="open('francias')" mat-fab color="primary">
+                                    <mat-icon>keyboard_arrow_up</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row" *ngIf="opencard3">
+                        <div class="col-lg-1">
+                        </div>
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-9 row">
+                            <div class="col-lg-7">
+                                <select class="browser-default custom-select">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                                <select class="browser-default custom-select">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content" fxLayout="column" fxLayoutAlign="start start" fxFlex>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-lg-1 col-form-label">Anglais</label>
+                        <div class="col-lg-2">
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="col-lg-9 row" style="margin-top: -1%;">
+                            <div class="radio-toolbar ">
+                                <input type="radio" id="111" name="Anglais" value="111">
+                                <label for="111">Auccune</label>
+                                <input type="radio" id="222" name="Anglais" value="222">
+                                <label style="border-left: 0px" for="222">Anuelle</label>
+                                <input type="radio" id="333" name="Anglais" value="333">
+                                <label style="border-left: 0px" for="333">Trimestriel</label>
+                            </div>
+                            <div class="radio-toolbar">
+                                <input type="radio" id="444" name="Anglaisformat" value="444">
+                                <label for="444">Group</label>
+                                <input type="radio" id="555" name="Anglaisformat" value="555">
+                                <label style="border-left: 0px" for="555">Particulier</label>
+                            </div>
+                            <div class="radio-toolbar">
+                                <input type="radio" id="666" name="AnglaisEnLinge" value="666">
+                                <label for="666">Auccune</label>
+                                <input type="radio" id="777" name="AnglaisEnLinge" value="777">
+                                <label style="border-left: 0px" for="777">Anuelle</label>
+                                <input type="radio" id="888" name="AnglaisEnLinge" value="888">
+                                <label style="border-left: 0px" for="888">Trimestriel</label>
+                            </div>
+                            <div class="example-button-container">
+                                <button *ngIf="!opencard4" (click)="open('anglais')" mat-fab color="primary">
+                                    <mat-icon>keyboard_arrow_down</mat-icon>
+                                </button>
+                                <button *ngIf="opencard4" (click)="open('anglais')" mat-fab color="primary">
+                                    <mat-icon>keyboard_arrow_up</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row" *ngIf="opencard4">
+                        <div class="col-lg-1">
+                        </div>
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-9 row">
+                            <div class="col-lg-7">
+                                <select class="browser-default custom-select">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                                <select class="browser-default custom-select">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class=" col-lg-12" style="margin-top: 4%;">
+        <div class="card">
+            <div class="card-header">
+                Disponibilités
+            </div>
+            <div class="card-body">
+                 <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">
+
+                            </th>
+                            <th style="text-align: center;">
+                                Matin
+                            </th>
+                            <th style="text-align: center;">
+                                Aprés-midi
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of workedDays">
+                            <td style="text-align: left;">
+                                {{item.day}}
+                            </td>
+                            <th>
+                                <div style="margin-left: 44%;" class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="{{item.morning}}">
+                                    <label class="custom-control-label" for="{{item.morning}}"> </label>
+                                </div>
+                            </th>
+                            <th>
+                                <div style="margin-left: 40%;" class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="{{item.afterNoon}}">
+                                    <label class="custom-control-label" for="{{item.afterNoon}}"> </label>
+                                </div>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
