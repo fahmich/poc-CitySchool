@@ -7,6 +7,7 @@ import { Router } from "@angular/router";
 import { UserService } from './firebase-services/user.service';
 
 import * as firebase from 'firebase/app';
+// import { threadId } from 'worker_threads';
  
 @Injectable({
   providedIn: 'root'
@@ -28,20 +29,21 @@ export class AuthService {
   ) {
     /* Saving user data in localstorage when
     logged in and setting up null when logged out */
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        this.userData = user;
+    // this.afAuth.authState.subscribe(user => {
+    //   console.log('chiiiiiiiiiiiiiiiiii')
+    //   if (user!= undefined) {
+    //     this.userData = user;
 
-        localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user'));
+    //     localStorage.setItem('user', JSON.stringify(this.userData));
+    //     JSON.parse(localStorage.getItem('user'));
 
-        localStorage.setItem('codedefamille', 
-        JSON.stringify(this.codedefamille));
-      } else {
-        localStorage.setItem('user', null);
-        JSON.parse(localStorage.getItem('user'));
-      }
-    })
+    //     localStorage.setItem('codedefamille', 
+    //     JSON.stringify(this.codedefamille));
+    //   } else {
+    //     localStorage.setItem('user', null);
+    //     JSON.parse(localStorage.getItem('user'));
+    //   }
+    // })
   }
  
   async SignIn(codefamille,email, password) {
@@ -83,39 +85,48 @@ export class AuthService {
         window.alert(error.message)
       })
   }
-
-  statedoc(){
-    const increment = firestore.FieldValue.increment(1);
-    const statsRef = this.afs.collection('users').doc('--stats--').ref;
+   increment:any
+   statedoc(){
+    // this.increment = firestore.FieldValue.increment(1);
+    // console.log('1111'+ this.increment)
+    // const statsRef = this.afs.collection('users').doc('--stats--').ref;
     const batch = this.afs.firestore.batch();
-    batch.set(statsRef, { storyCount: increment }, { merge: true });
+    batch.set( this.afs.collection('users').doc('--stats--').ref, { storyCount: firestore.FieldValue.increment(1) }, { merge: true });
     batch.commit();
    
     //  this.afs.collection("users").doc('--stats--').valueChanges()
     // .subscribe((item:any)=>{  
-
     //   console.log('this item 1',item.storyCount)
     //    return item.storyCount
     //  }) 
     
-      this.userService.getStat().subscribe((item:any)=>{
-        console.log('this item 1',item.storyCount)
+    //  this.userService.getStat().subscribe((item:any)=>{
+    // this.test=item.storyCount  
+    //     console.log('this item 1',item.storyCount)
    
-      return item.storyCount  
+    //   return item.storyCount  
        
-       })
+    //    })
     
   }
-
+test:any
+code2:any
   generateCodeFamily() {
- 
+    this.statedoc()
+    
     var year = `${(new Date()).getFullYear()}`;
     var code1 = year.substring(0,2);
-    var code2= this.statedoc();
+     this.userService.getStat().subscribe((item:any)=>{
+      this.code2=item.storyCount  
+          console.log('this item 1',item.storyCount)
+     
+          
+         })
     
-    console.log('this is  223', code2 )
+    console.log('this is  223',  this.test );
+    //new Promise( resolve => setTimeout(resolve, 5000));
+    this.codefamily=`F-${code1}`+`-${ this.code2}`;
 
-    this.codefamily=`F-${code1}`+`-${code2}`;
     return this.codefamily 
   }
   // Send email verfificaiton when new user sign up
@@ -162,19 +173,19 @@ export class AuthService {
       merge: true
     })
   }
-  SetUserData(user) {
-    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-    const userData: User = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
-      codefamille : user.codefamille  
+  // SetUserData(user) {
+  //   const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+  //   const userData: User = {
+  //     uid: user.uid,
+  //     email: user.email,
+  //     displayName: user.displayName,
+  //     photoURL: user.photoURL,
+  //     emailVerified: user.emailVerified,
+  //     codefamille : user.codefamille  
 
-    }
-    return userRef.set(userData, { merge: true   })
-  }
+  //   }
+  //   return userRef.set(userData, { merge: true   })
+  // }
 
   // Sign out
   SignOut() {
