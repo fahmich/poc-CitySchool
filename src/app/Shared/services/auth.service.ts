@@ -31,11 +31,8 @@ export class AuthService {
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.userData = user;
-
         localStorage.setItem('user', JSON.stringify(this.userData));
         //JSON.parse(localStorage.getItem('user'));
-
-
       } else {
         localStorage.setItem('user', null);
        // JSON.parse(localStorage.getItem('user'));
@@ -46,15 +43,14 @@ export class AuthService {
       if(item==undefined){
         this.code2=0
       }else{
-        this.code2 =     item.storyCount
+        this.code2 =item.storyCount
       }
     })
   }
  
   async SignIn(codefamille,email, password) {
     return  this.afAuth.auth.signInWithEmailAndPassword(email, password)
-      .then(async (result) => {
-     
+      .then(async (result) => {     
       this.ngZone.run(async () => { 
         this.afAuth.user.subscribe(res=>{
         this.userService.getUser(res.uid).subscribe((item:any)=>{
@@ -166,20 +162,7 @@ code2:any
       merge: true
     })
   }
-  // SetUserData(user) {
-  //   const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-  //   const userData: User = {
-  //     uid: user.uid,
-  //     email: user.email,
-  //     displayName: user.displayName,
-  //     photoURL: user.photoURL,
-  //     emailVerified: user.emailVerified,
-  //     codefamille : user.codefamille  
-
-  //   }
-  //   return userRef.set(userData, { merge: true   })
-  // }
-
+ 
   // Sign out
   SignOut() {
     return this.afAuth.auth.signOut().then(() => {
