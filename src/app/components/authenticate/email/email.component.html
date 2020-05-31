@@ -4,11 +4,9 @@
       <div class="authBlock">
         <h3>Thank You for Registering</h3>
       
-        <!-- <div class="formGroup" *ngIf="authService.codedefamille as codefamille">
+        <div class="formGroup" *ngIf="authService.codedefamille as coder">
           <p class="text-center">yourcode famille is  </p>  
-          <h1><strong>{{codefamille}}</strong></h1>      </div> -->
-          <!-- <h1><strong>{{ generateCodeFamily() }}</strong></h1>      </div> -->
-
+          <h1><strong>{{coder}}</strong></h1>      </div>
 
         <div class="formGroup" *ngIf="authService.userData as user">
           <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>

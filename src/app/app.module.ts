@@ -71,7 +71,7 @@ import { MereComponent } from './components/doshboard_element/dashboard/parents-
     MatTabsModule ,
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase, 'fahmidb'),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule,

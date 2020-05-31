@@ -7,8 +7,7 @@ import { Router } from "@angular/router";
 import { UserService } from './firebase-services/user.service';
 
 import * as firebase from 'firebase/app';
-// import { threadId } from 'worker_threads';
- 
+  
 @Injectable({
   providedIn: 'root'
 
@@ -16,9 +15,9 @@ import * as firebase from 'firebase/app';
 
 export class AuthService {
   userData: any;
-  codedefamille: any; // Save logged in user data
+  codedefamille: 'test'; // Save logged in user data
   codefamily:any;
-    Count:any;
+   // Count:any;
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
@@ -29,21 +28,27 @@ export class AuthService {
   ) {
     /* Saving user data in localstorage when
     logged in and setting up null when logged out */
-    // this.afAuth.authState.subscribe(user => {
-    //   console.log('chiiiiiiiiiiiiiiiiii')
-    //   if (user!= undefined) {
-    //     this.userData = user;
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        this.userData = user;
 
-    //     localStorage.setItem('user', JSON.stringify(this.userData));
-    //     JSON.parse(localStorage.getItem('user'));
+        localStorage.setItem('user', JSON.stringify(this.userData));
+        //JSON.parse(localStorage.getItem('user'));
 
-    //     localStorage.setItem('codedefamille', 
-    //     JSON.stringify(this.codedefamille));
-    //   } else {
-    //     localStorage.setItem('user', null);
-    //     JSON.parse(localStorage.getItem('user'));
-    //   }
-    // })
+
+      } else {
+        localStorage.setItem('user', null);
+       // JSON.parse(localStorage.getItem('user'));
+      }
+    })
+    this.userService.getStat().subscribe((item: any) => {
+      console.log(item)
+      if(item==undefined){
+        this.code2=0
+      }else{
+        this.code2 =     item.storyCount
+      }
+    })
   }
  
   async SignIn(codefamille,email, password) {
@@ -72,7 +77,7 @@ export class AuthService {
   // Sign up with email/password
   SignUp(email, password) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-      .then((result) => {
+      .then(async (result) => {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */     
         this.SetUserDatawithnewcodefamily(result.user);
@@ -80,6 +85,8 @@ export class AuthService {
         this.userService.getUser(result.user.uid).subscribe((item:any)=>{
            this.codedefamille=item.codefamille})
     
+           localStorage.setItem('codedefamille', JSON.stringify(this.codedefamille));
+
         this.SendVerificationMail();
        }).catch((error) => {
         window.alert(error.message)
@@ -91,22 +98,10 @@ export class AuthService {
     // console.log('1111'+ this.increment)
     // const statsRef = this.afs.collection('users').doc('--stats--').ref;
     const batch = this.afs.firestore.batch();
-    batch.set( this.afs.collection('users').doc('--stats--').ref, { storyCount: firestore.FieldValue.increment(1) }, { merge: true });
+    batch.set( this.afs.collection('users').doc('--stats--').
+        ref, { storyCount: firestore.FieldValue.increment(1) }, { merge: true });
     batch.commit();
-   
-    //  this.afs.collection("users").doc('--stats--').valueChanges()
-    // .subscribe((item:any)=>{  
-    //   console.log('this item 1',item.storyCount)
-    //    return item.storyCount
-    //  }) 
-    
-    //  this.userService.getStat().subscribe((item:any)=>{
-    // this.test=item.storyCount  
-    //     console.log('this item 1',item.storyCount)
-   
-    //   return item.storyCount  
-       
-    //    })
+
     
   }
 test:any
@@ -116,14 +111,12 @@ code2:any
     
     var year = `${(new Date()).getFullYear()}`;
     var code1 = year.substring(0,2);
-     this.userService.getStat().subscribe((item:any)=>{
-      this.code2=item.storyCount  
-          console.log('this item 1',item.storyCount)
-     
-          
+   
+    this.userService.getStat().subscribe((item:any)=>{this.code2=item.storyCount  
+          console.log('this item 1', this.code2)          
          })
     
-    console.log('this is  223',  this.test );
+    console.log('this is  223',  this.code2 );
     //new Promise( resolve => setTimeout(resolve, 5000));
     this.codefamily=`F-${code1}`+`-${ this.code2}`;
 
