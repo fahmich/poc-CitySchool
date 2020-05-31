@@ -38,6 +38,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
  
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { AutreComponent } from './components/doshboard_element/dashboard/parents-space/autre/autre.component';
+import { MereComponent } from './components/doshboard_element/dashboard/parents-space/mere/mere.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
      ParentComponent,
       TabContentComponent,
      ContentContainerDirective,
+     AutreComponent,
+     MereComponent,
      
   ],
   imports: [

@@ -1,11 +1,13 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from "../models/user";
-import { auth } from 'firebase/app';
+import { auth, firestore } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
 import { UserService } from './firebase-services/user.service';
 
+import * as firebase from 'firebase/app';
+ 
 @Injectable({
   providedIn: 'root'
 
@@ -14,11 +16,12 @@ import { UserService } from './firebase-services/user.service';
 export class AuthService {
   userData: any;
   codedefamille: any; // Save logged in user data
-  codefamily:any
-
+  codefamily:any;
+    Count:any;
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
+   
     public router: Router,
     public ngZone: NgZone, // NgZone service to remove outside scope warning
     private userService:UserService
@@ -53,7 +56,7 @@ export class AuthService {
           if(item.codefamille ===codefamille ){
            this.router.navigate(['dashboard']);
             } else{
-            alert("Vous n'êtes pas autorisé !!:")
+              window.alert("veuillez vérifier code famille saisies ")
            }
         })        
       })
@@ -81,16 +84,38 @@ export class AuthService {
       })
   }
 
-  generateCodeFamily() {
-    // var washingtonRef = this.afs.collection("users").doc('DC');
+  statedoc(){
+    const increment = firestore.FieldValue.increment(1);
+    const statsRef = this.afs.collection('users').doc('--stats--').ref;
+    const batch = this.afs.firestore.batch();
+    batch.set(statsRef, { storyCount: increment }, { merge: true });
+    batch.commit();
+   
+    //  this.afs.collection("users").doc('--stats--').valueChanges()
+    // .subscribe((item:any)=>{  
 
-    // Atomically increment the population of the city by 50.
-    //   washingtonRef.update({
-    // population: firebase.firestore.FieldValue.increment(50)
-    // });
+    //   console.log('this item 1',item.storyCount)
+    //    return item.storyCount
+    //  }) 
+    
+      this.userService.getStat().subscribe((item:any)=>{
+        console.log('this item 1',item.storyCount)
+   
+      return item.storyCount  
+       
+       })
+    
+  }
+
+  generateCodeFamily() {
+ 
     var year = `${(new Date()).getFullYear()}`;
     var code1 = year.substring(0,2);
-    this.codefamily=`F-${code1}`;
+    var code2= this.statedoc();
+    
+    console.log('this is  223', code2 )
+
+    this.codefamily=`F-${code1}`+`-${code2}`;
     return this.codefamily 
   }
   // Send email verfificaiton when new user sign up

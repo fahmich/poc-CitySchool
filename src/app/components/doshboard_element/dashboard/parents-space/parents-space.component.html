@@ -1,18 +1,26 @@
-<div class="bg-light  ">
-    <div class="my-3 p-3">
-      <h2 class="display-5">parents space</h2>
-     
-    </div>
-    <div class=" mx-auto" style="width: 80%; border-radius: 21px 21px 0 0;">
-    
-      <div class="row" *ngIf="authService.userData as user">      
-            <div class="media-body">
-               <p>Email: <strong>{{user.email}}</strong></p>
-               <p>code famille: <strong>{{(user.codefamille) ? user.codefamille : 'null'}}</strong></p>   
-            </div>
-       
-        <app-parent></app-parent>
-      </div>
-    
-    </div>
+<br>
+<div class="form-group  row "  *ngIf="authService.userData as user">
+  <!-- <label for="inputPassword" class="col-lg-6 col-form-label">Code famille</label> -->
+  <div class="col-lg-6">
+    <!-- <input type="text" class="form-control" value= " "  > -->
+    <p>code famille: <strong>{{(user.codefamille) ? user.codefamille : 'null'}}</strong></p>  
   </div>
+</div>
+ 
+<div class="card">
+  <div class="card-headerinfo">
+    <button class="btn btnfamile btn-outline-primary" [ngClass]="{ 'active' : isValue == 1 }" (click)="toggle(1)"
+      type="button">pére</button>
+    <button class="btn btnfamile btn-outline-primary" [ngClass]="{ 'active' : isValue == 2 }" (click)="toggle(2)"
+      type="button">Mére</button>
+    <button class="btn btnfamile btn-outline-primary" [ngClass]="{ 'active' : isValue == 3 }" (click)="toggle(3)"
+      type="button">Autre</button>
+  </div>
+  <div class="card-body">
+    <app-parent *ngIf="isValue == 1"></app-parent>
+    <app-mere  *ngIf="isValue == 2"></app-mere>
+    <app-autre *ngIf="isValue == 3"></app-autre>
+  </div>
+</div>
+<br><br>
+

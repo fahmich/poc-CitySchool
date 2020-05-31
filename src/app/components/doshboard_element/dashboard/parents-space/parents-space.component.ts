@@ -15,6 +15,18 @@ export class ParentsSpaceComponent implements OnInit {
     public ngZone: NgZone
   ) { }
 
+  isValue: number = 1;
+
+    toggle(x) {
+       if (x == 1) { this.isValue = 1; }
+      else if (x == 2) { this.isValue = 2; }
+      else if (x == 3) { this.isValue = 3; }
+    }
+
+    getcode(){
+      return this.authService.userData.codefamille
+    }
+    
   ngOnInit(): void {
   }
 
