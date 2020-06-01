@@ -1,0 +1,33 @@
+<div class="displayTable">
+  <div class="displayTableCell">
+
+    <div class="authBlock">
+      <h3>Thank You for Registering</h3>
+    
+      <div class="formGroup" *ngIf="authService.codedefamille as coder">
+        <p class="text-center">your code famille is : </p>  
+        <div class="text-center"><h1><strong>{{coder}}</strong></h1> </div>
+        <!-- <h1><strong>{{coder}}</strong></h1>       -->
+      </div>
+
+      <div class="formGroup" *ngIf="authService.userData as user">
+        <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong></p>
+        <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+      </div>
+
+      <!-- Calling SendVerificationMail() method using authService Api -->
+      <div class="formGroup">
+        <button type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
+          <i class="fas fa-redo-alt"></i>
+          Resend Verification Email
+        </button>
+      </div>
+
+    </div>
+
+    <div class="redirectToLogin">
+      <span>Go back to?<span class="redirect" routerLink="/login"> login</span></span>
+    </div>
+
+  </div>
+</div>

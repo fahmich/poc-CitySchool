@@ -1,0 +1,57 @@
+@import 'https://use.fontawesome.com/releases/v5.5.0/css/all.css';
+
+ 
+.authBlock {
+  margin: 0 auto;
+  max-width: 750px;
+   padding: 30px 30px 10px;
+    /* -webkit-box-shadow: 0 0 4px 0 rgba(253, 252, 252, 0.04); */
+  box-shadow: 0 0 4px 0 rgba(240, 234, 234, 0.04);
+}
+ 
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.topleft {
+  position: relative;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+.topright {
+  position: relative;
+  top: 8px;
+  right: 16px;
+ }
+
+.flex-container {
+  display: flex;
+ 
+}
+
+.taill {
+  height: 100px;
+  width: 100px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+  float: left;
+  width: 100%;
+}
+ 
+.flex-text {
+  font-size: 70px !important;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}

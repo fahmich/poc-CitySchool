@@ -1,0 +1,25 @@
+<br>
+<div class="form-group  row "  >
+  <!-- <label for="inputPassword" class="col-lg-6 col-form-label">Code famille</label> -->
+  <div class="col-lg-6">
+    <!-- <input type="text" class="form-control" value= " "  > -->
+    <p>code familler: <strong>{{code_famely}}</strong></p>  
+  </div>
+</div>
+ 
+<div class="card">
+  <div class="card-headerinfo">
+    <button class="btn btnfamile btn-outline-primary" [ngClass]="{ 'active' : isValue == 1 }" (click)="toggle(1)"
+      type="button">pére</button>
+    <button class="btn btnfamile btn-outline-primary" [ngClass]="{ 'active' : isValue == 2 }" (click)="toggle(2)"
+      type="button">Mére</button>
+    <button class="btn btnfamile btn-outline-primary" [ngClass]="{ 'active' : isValue == 3 }" (click)="toggle(3)"
+      type="button">Autre</button>
+  </div>
+  <div class="card-body">
+    <app-parent *ngIf="isValue == 1"></app-parent>
+    <app-mere  *ngIf="isValue == 2"></app-mere>
+    <app-autre *ngIf="isValue == 3"></app-autre>
+  </div>
+</div>
+<br><br>
