@@ -1,12 +1,21 @@
-export interface parent {
-    name: string;
+export class Parent {
+    $key?: string;
+    idUser:string;
+    
+    nom: string;
     prenon : string;
     mobile: string;
     fix: string;
-    adress: string;
-    codefamille: string;
-    referentpedagogique :boolean;
-    referentlegal:boolean;
-    prixapplique :string;
-    prixtotalapllique:string;
+
+    numeroDeRue: string;
+    nomDeRue: string;
+    codePostal: string;
+
+    referentPedagogique :boolean;
+    referentLegal:boolean;
+    prixTotalApllique:Number;
+    prixApplique :Number;
  }
+
+
+ 

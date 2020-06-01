@@ -17,7 +17,7 @@ export class AuthService {
   userData: any;
   codedefamille: 'test'; // Save logged in user data
   codefamily:any;
-   // Count:any;
+  //Count:any;
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
@@ -55,6 +55,9 @@ export class AuthService {
         this.afAuth.user.subscribe(res=>{
         this.userService.getUser(res.uid).subscribe((item:any)=>{
          
+          localStorage.setItem('code_famely',  item.codefamille);
+          localStorage.setItem('uid',  item.uid);
+
           this.userData=item
           if(item.codefamille ===codefamille ){
            this.router.navigate(['dashboard']);
@@ -78,9 +81,8 @@ export class AuthService {
         up and returns promise */     
         this.SetUserDatawithnewcodefamily(result.user);
 
-        this.userService.getUser(result.user.uid).subscribe((item:any)=>{
-           this.codedefamille=item.codefamille})
-    
+       this.userService.getUser(result.user.uid).subscribe((item:any)=>{
+           this.codedefamille=item.codefamille})   
            localStorage.setItem('codedefamille', JSON.stringify(this.codedefamille));
 
         this.SendVerificationMail();
@@ -162,11 +164,14 @@ code2:any
       merge: true
     })
   }
- 
+  
   // Sign out
   SignOut() {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem('user');
+      localStorage.removeItem('code_famely')
+      localStorage.removeItem('uid')
+
       this.router.navigate(['login']);
     })
   }
