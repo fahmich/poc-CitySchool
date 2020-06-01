@@ -1,110 +1,154 @@
 .example-h2 {
-    margin: 10px;
-  }
-  .form-control-xs{
-    display: block;
-    width: 45%;
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-  
-  }
+  margin: 10px;
+}
+.form-control-xs{
+  display: block;
+  width: 45%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
 
-  .example-section {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    height: 60px;
-  }
-  
-  .example-margin {
-    margin: 10px;
-  }
-  pre {
-    display: block;
-        padding: 9.5px;
-        margin: 0 0 10px;
-        font-size: 13px;
-        line-height: 1.42857;
-        word-break: break-all;
-        word-wrap: break-word;
-        /* color: #adb4be; */
-        /* background-color: #f5f5f5; */
-        border: 1px solid #d65aff;
-        border-radius: 2px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 10px;
+}
+pre {
+  display: block;
+      padding: 9.5px;
+      margin: 0 0 10px;
+      font-size: 13px;
+      line-height: 1.42857;
+      word-break: break-all;
+      word-wrap: break-word;
+      /* color: #adb4be; */
+      /* background-color: #f5f5f5; */
+      border: 1px solid #d65aff;
+      border-radius: 2px;
 }
 
 .radio-toolbar {
-    margin: 10px;
-  }
-  
-  .radio-toolbar input[type="radio"] {
-    opacity: 0;
-    position: fixed;
-    width: 0;
-  }
-  
-  .radio-toolbar label {
-      display: inline-block;
-      background-color: #fff;
-      padding: 10px 8px;
-      font-family: sans-serif, Arial;
-      font-size: 16px;
-      border: 1px solid #131212;
-   }
-  
-  
-  .radio-toolbar label:hover {
-    background-color: #dfd;
-  }
-  
-  .radio-toolbar input[type="radio"]:focus + label {
-      border: 2px dashed #444;
-  }
-  
-  .radio-toolbar input[type="radio"]:checked + label {
-      background-color: #2d77e0;
-      border-color: #2d77e0;
-      color: #fff
-  }
-  
-  section {
-    display: table;
-    margin: 8px;
-  }
-  
-  .example-label {
-    display: table-cell;
-    font-size: 14px;
-    margin-left: 8px;
-    width: 120px;
-  }
-  
-  .example-button-row {
-    display: table-cell;
-  }
-  
-  .example-button-row button {
-    display: table-cell;
-    margin-right: 8px;
-  }
-  
-  .example-flex-container {
-    display: flex;
-    justify-content: space-between;
-    width: 480px;
-  }
-  
-  .example-button-container {
-    display: flex;
-    justify-content: center;
-    width: 62px !important;
-  }
- 
+  margin: 10px;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #fff;
+    padding: 10px 8px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 1px solid #131212;
+ }
+
+
+.radio-toolbar label:hover {
+  background-color: #dfd;
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+    border: 2px dashed #444;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color: #2d77e0;
+    border-color: #2d77e0;
+    color: #fff
+}
+
+section {
+  display: table;
+  margin: 8px;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+}
+
+.example-button-row button {
+  display: table-cell;
+  margin-right: 8px;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  width: 480px;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 62px !important;
+}
+
+/* CSS to change Default/'Accent' color */
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+background-color: blue; /*replace with your color*/
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+background-color: skyblue;  /*replace with your color*/
+}
+
+/* CSS to change 'Primary' color */
+
+::ng-deep .mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+background-color: green;
+}
+
+::ng-deep .mat-slide-toggle-bar{
+background-color: #87ceeb;
+
+}
+::ng-deep .mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+background-color: #ff99ff;
+}
+
+/* CSS to change 'Warn' color */
+
+::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+background-color: red;
+}
+
+::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+background-color: #ffe066;
+}
+.mat-slide-toggle-bar, .mat-slide-toggle-thumb {
+transition: none;
+background-color: skyblue !important;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+background-color:#0056ff; 
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+background-color: #0056ff; 
+}
