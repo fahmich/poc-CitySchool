@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { Parent } from 'src/app/Shared/models/parent';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { ParentsService } from 'src/app/Shared/services/firebase-services/parent.service';
+import { Parent } from 'src/app/Shared/models/parent';
 
 @Component({
- selector: 'app-parent',
- templateUrl: './parent.component.html',
- styleUrls: ['./parent.component.css']
+  selector: 'app-pere',
+  templateUrl: './pere.component.html',
+  styleUrls: ['./pere.component.css']
 })
-export class ParentComponent implements  OnInit {
- ParentsService: FormGroup;
+export class PereComponent implements OnInit {
+  ParentsService: FormGroup;
   Parent: Parent = new Parent();
   uid:any
   constructor(
