@@ -46,7 +46,7 @@ export class MereComponent implements OnInit {
    }
   
    getMere(role) {
-    this.parentsService.getPere(this.uid,role).subscribe((item:any)=>{
+    this.parentsService.getParent(this.uid,role).subscribe((item:any)=>{
      this.Parent=item 
      //console.log("mere",this.Parent)
      if(item !=undefined){
@@ -55,7 +55,6 @@ export class MereComponent implements OnInit {
     })        
    }
   
-   
    onSubmit(formParentsService) {
      console.log(formParentsService.value)
      this.parentsService.creatMere(this.uid,formParentsService.value);

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { child } from 'src/app/Shared/models/child';
-
+ 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
@@ -13,7 +13,7 @@ export class ChildComponent implements OnInit {
   child: child = new child();
   constructor(
   private formBuilder: FormBuilder,
-
+  
   ) {  }
    selected = 'option2';
 
@@ -89,4 +89,6 @@ export class ChildComponent implements OnInit {
       this.opencard4=! this.opencard4
     }
   }
+
+ 
 }

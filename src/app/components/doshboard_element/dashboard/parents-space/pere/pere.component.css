@@ -69,4 +69,7 @@
     background-color: #0056ff; 
   }
 
+  ::ng-deep  element.style {
+    margin-left: 25%;
+}
   

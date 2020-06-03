@@ -44,7 +44,7 @@ export class PereComponent implements OnInit {
  }
 
   getPere(role) {
-  this.parentsService.getPere(this.uid,role).subscribe((item:any)=>{
+  this.parentsService.getParent(this.uid,role).subscribe((item:any)=>{
    this.Parent=item 
    //console.log("pere",this.Parent)
    if(item !=undefined){

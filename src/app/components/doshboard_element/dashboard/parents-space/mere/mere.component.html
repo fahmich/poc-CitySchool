@@ -2,14 +2,17 @@
 <form [formGroup]="formParentsService"> 
     
     <div class="form-group  row ">
-        <label for="inputPassword" class="col-lg-6 col-form-label">Nom</label>
-        <div class="col-lg-6">
-            <input type="text" class="form-control" name="nom" formControlName="nom">
+        <div style="margin-top: 5%;" class="col-lg-6">
+            <label for="inputPassword" >Nom</label>
+            <input type="text" class="form-control" name="nom" formControlName="nom" >
         </div>
     </div>
     <div class="form-group  row ">
-        <label for="inputPassword" class="col-lg-6 col-form-label">Prénom</label>
+        <!-- <label for="inputPassword" class="col-lg-6 col-form-label">Prénom</label> -->
+        
+
         <div class="col-lg-6">
+            <label for="firstName">Prenon</label>
             <input type="text" class="form-control" name="prenon" formControlName="prenon">
         </div>
     </div>
@@ -48,23 +51,23 @@
         </div>
     </div>
     <div class="form-group  row ">
-            <label for="inputPassword" class="col-lg-8 col-form-label">Réferent pédagogique</label>
-            <div class="col-lg-4">
-                <div style="margin-left: 44%;" class="custom-control custom-switch">
-                      <mat-slide-toggle  formControlName="referentPedagogique" name="referentPedagogique"  > </mat-slide-toggle>
-
-                </div>
-            </div>
-        </div>
-    <div class="form-group  row ">
-        <label for="inputPassword" class="col-lg-8 col-form-label">Réferent légal</label>
+        <label for="inputPassword" class="col-lg-8 col-form-label">Réferent pédagogique</label>
         <div class="col-lg-4">
-            <div style="margin-left: 44%;" class="custom-control custom-switch"  >
-                <mat-slide-toggle  formControlName="referentLegal" name="referentLegal"  > </mat-slide-toggle>
+            <div style="margin-left: 10%;" class="custom-control custom-switch">
+                  <mat-slide-toggle  formControlName="referentPedagogique" name="referentPedagogique"  > </mat-slide-toggle>
 
             </div>
         </div>
     </div>
+<div class="form-group  row ">
+    <label for="inputPassword" class="col-lg-8 col-form-label">Réferent légal</label>
+    <div class="col-lg-4">
+        <div style="margin-left: 10%;" class="custom-control custom-switch"  >
+            <mat-slide-toggle  formControlName="referentLegal" name="referentLegal"  > </mat-slide-toggle>
+
+        </div>
+    </div>
+</div>
     
     <div class="form-group  row ">
         <label for="inputPassword" class="col-lg-6 col-form-label" style="color: #cf2a28">Prix total calculé</label>

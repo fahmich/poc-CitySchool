@@ -26,14 +26,11 @@ export class ParentsService {
         parent.$key = id
         parent.idUser = this.authService.userData.uid; 
   
-     this.firestore.collection("users").doc(idNameSpace).collection("parents").doc("pere").set(JSON.parse(JSON.stringify(parent)));
+     this.firestore.collection("users").doc(idNameSpace).collection("parents").doc("pere").set(parent, { merge: true });   
       
       });
    } 
-    getPere(idNameSpace,role) {      
-    return  this.firestore.collection("users").doc(idNameSpace).collection("parents").doc(role).valueChanges();
-    }  
-    
+   
    creatMere(idNameSpace,parent :Parent) {
     return new Promise<any>((resolve, reject) => {          
         const id =this.firestore.createId();
@@ -53,58 +50,12 @@ export class ParentsService {
       });
    } 
  
-  updateMere(idNameSpace,role){
-       return this.firestore.collection("users").doc(idNameSpace).collection("parents").doc(role).set(parent, { merge: true });   
-  }
-  updatePere(idNameSpace,role){
-        return this.firestore.collection("users").doc(idNameSpace).collection("parents").doc(role).set(JSON.parse(JSON.stringify(parent)));
-  }
-
   deleteParent(idNameSpace,role: string) {
     return this.firestore.collection("users").doc(idNameSpace).collection("parents").doc(role).delete();
    }
-  
-  // getUser(idNameSpace) {      
-  //   return this.firestore.collection("users").doc(idNameSpace).collection("reseaux").valueChanges();
-  //   }  
- //    form: FormGroup = new FormGroup({
-//     $key: new FormControl(null),
-//     idUser: new FormControl(null),
-
-//     nom: new FormControl(''),
-//     prenon: new FormControl(''),
-//     mobile: new FormControl(''),
-//     fix: new FormControl(''),
-
-//     NumeroDeRue: new FormControl(''),
-//     NomDeRue: new FormControl(''),
-//     codePostal:  new FormControl(''),
-
-//     referentPedagogique :new FormControl(''),
-//     referentLegal:new FormControl(''),
-//     prixTotalApllique: new FormControl(''),
-//     prixApplique: new FormControl(''),
-//    });   
-// initializeFormGroup() {
-//   this.form.setValue({
-//     $key: null,
-//     idUser: null,
-//     nom: '' ,
-//     prenon:'',
-//     mobile:'',
-//     fix:'',
-
-//     NumeroDeRue:'',
-//     NomDeRue:'',
-//     codePostal: '',
-
-//     referentPedagogique :'',
-//     referentLegal:'',
-//     prixTotalApllique:'',
-//     prixApplique:'',
-//   })
-// };
-//  populateForm(marque) {
-//       this.form.setValue(marque);
-//     }
+  getParent(idNameSpace,role) {      
+      return  this.firestore.collection("users").doc(idNameSpace).collection("parents").doc(role).valueChanges();
+      }
+ 
+ 
 }
