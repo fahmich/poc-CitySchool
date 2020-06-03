@@ -9,7 +9,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./parents-space.component.css']
 })
 export class ParentsSpaceComponent implements OnInit {
-
+  code_famely:any
   constructor(
     public authService: AuthService,
     public router: Router,
@@ -18,19 +18,17 @@ export class ParentsSpaceComponent implements OnInit {
 
   ) { }
 
-  isValue: number = 1;
-
-    toggle(x) {
-       if (x == 1) { this.isValue = 1; }
-      else if (x == 2) { this.isValue = 2; }
-      else if (x == 3) { this.isValue = 3; }
-    }
-
-    getcode(){
-      return this.authService.userData.codefamille
-    }
-    code_famely:any
-  ngOnInit(): void {
+    //isValue: number = 1;
+    // toggle(x) {
+    //    if (x == 1) { this.isValue = 1; }
+    //   else if (x == 2) { this.isValue = 2; }
+    //   else if (x == 3) { this.isValue = 3; }
+    // }
+    // getcode(){
+    //   return this.authService.userData.codefamille
+    // }
+    
+   ngOnInit(): void {
     this.code_famely=localStorage.getItem('code_famely')
    }
 

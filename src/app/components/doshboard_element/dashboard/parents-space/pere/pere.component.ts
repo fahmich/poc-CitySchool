@@ -9,7 +9,7 @@ import { Parent } from 'src/app/Shared/models/parent';
   styleUrls: ['./pere.component.css']
 })
 export class PereComponent implements OnInit {
-  ParentsService: FormGroup;
+  formParentsService: FormGroup;
   Parent: Parent = new Parent();
   uid:any
   constructor(
@@ -19,33 +19,48 @@ export class PereComponent implements OnInit {
  }
 
  ngOnInit(): void {
-   this.ParentsService = new FormGroup({});
-   this.ParentsService = this.createUserModelForm();
-   this.uid=localStorage.getItem('uid')
+  this.formParentsService = new FormGroup({});
+  this.uid=localStorage.getItem('uid')
+  this.getPere('pere') 
+   this.formParentsService = this.createUserModelForm();
 
  }
  createUserModelForm() {
    return this.formBuilder.group({
-     nomDeRue   : [this.Parent.nomDeRue],
-     numeroDeRue  : [this.Parent.numeroDeRue],
-     codePostal  : [this.Parent.codePostal],
-     fixe : [this.Parent.fix],
-     idUser  : [this.Parent.idUser],
-     mobile : [this.Parent.mobile],
-     nom   : [this.Parent.nom],
-     prenon  : [this.Parent.prenon],
-     prixApplique: [this.Parent.prixApplique],
-     prixTotalApllique : [this.Parent.prixTotalApllique],
+    idUser  : [this.Parent.idUser],
+    nom   : [this.Parent.nom],
+    prenon  : [this.Parent.prenon],
+    telephonePortable : [this.Parent.telephonePortable],
+    telephoneFixe : [this.Parent.telephoneFixe],
+    numeroDeRue  : [this.Parent.numeroDeRue],
+    nomDeRue   : [this.Parent.nomDeRue],
+    codePostal  : [this.Parent.codePostal],    
      referentLegal : [this.Parent.referentLegal],
      referentPedagogique  : [this.Parent.referentPedagogique],
+     prixApplique: [this.Parent.prixApplique],
+     prixTotalApllique : [this.Parent.prixTotalApllique],
  
    });
  }
- 
- onSubmit(ParentsService) {
-   console.log(ParentsService.value)
-   this.parentsService.creatPere(this.uid,ParentsService.value);
+
+  getPere(role) {
+  this.parentsService.getPere(this.uid,role).subscribe((item:any)=>{
+   this.Parent=item 
+   //console.log("pere",this.Parent)
+   if(item !=undefined){
+    this.formParentsService = this.createUserModelForm();
+   }
+  })        
  }
+ 
+ onSubmit(formParentsService) {
+   console.log(formParentsService.value)
+   this.parentsService.creatPere(this.uid,formParentsService.value);
+ }
+
+ deleteParent(role) {
+  this.parentsService.deleteParent(this.uid,role);
+}
  
 }
  

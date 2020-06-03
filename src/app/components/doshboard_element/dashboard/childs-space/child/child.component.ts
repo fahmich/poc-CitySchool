@@ -11,13 +11,10 @@ export class ChildComponent implements OnInit {
   @Input() data;
   userForm: FormGroup;
   child: child = new child();
+  constructor(
+  private formBuilder: FormBuilder,
 
-   constructor(
-    private formBuilder: FormBuilder,
-
-  ) {
-      
-  }
+  ) {  }
    selected = 'option2';
 
 

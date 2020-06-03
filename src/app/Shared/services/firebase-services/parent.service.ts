@@ -30,6 +30,10 @@ export class ParentsService {
       
       });
    } 
+    getPere(idNameSpace,role) {      
+    return  this.firestore.collection("users").doc(idNameSpace).collection("parents").doc(role).valueChanges();
+    }  
+    
    creatMere(idNameSpace,parent :Parent) {
     return new Promise<any>((resolve, reject) => {          
         const id =this.firestore.createId();

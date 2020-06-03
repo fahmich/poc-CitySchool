@@ -1,10 +1,10 @@
 
-<form [formGroup]="ParentsService"> 
+<form [formGroup]="formParentsService"> 
     
     <div class="form-group  row ">
         <label for="inputPassword" class="col-lg-6 col-form-label">Nom</label>
         <div class="col-lg-6">
-            <input type="text" class="form-control" name="nom" formControlName="nom">
+            <input type="text" class="form-control" name="nom" formControlName="nom" >
         </div>
     </div>
     <div class="form-group  row ">
@@ -14,15 +14,15 @@
         </div>
     </div>
     <div class="form-group  row ">
-        <label for="inputPassword" class="col-lg-6 col-form-label">Mobile</label>
+        <label for="inputPassword" class="col-lg-6 col-form-label">Télephone Portable</label>
         <div class="col-lg-6">
-            <input type="text" class="form-control" name="mobile" formControlName="mobile">
+            <input type="text" class="form-control" name="telephonePortable" formControlName="telephonePortable">
         </div>
     </div>
     <div class="form-group  row ">
-        <label for="inputPassword" class="col-lg-6 col-form-label">Fixe</label>
+        <label for="inputPassword" class="col-lg-6 col-form-label">Télephone Fixe</label>
         <div class="col-lg-6">
-            <input type="text" class="form-control" name="fixe" formControlName="fixe">
+            <input type="text" class="form-control" name="telephoneFixe" formControlName="telephoneFixe">
         </div>
     </div>
     <div class="adress">
@@ -86,10 +86,10 @@
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2" role="group" aria-label="First group">
             <button  
-             type="button" class="btn btn-info" (click)="onSubmit(ParentsService)"  >inscription</button>           
+             type="button" class="btn btn-info" (click)="onSubmit(formParentsService)"  >inscription</button>           
           </div>
         <div class="btn-group mr-2" role="group" aria-label="Second group">
-          <button type="button" class="btn btn-info" >supprimer</button>
+          <button type="button" class="btn btn-info"  (click)="deleteParent('pere')" >supprimer</button>
         </div>
       </div> 
     </form>

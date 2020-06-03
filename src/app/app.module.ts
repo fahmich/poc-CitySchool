@@ -29,8 +29,8 @@ import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform
 import { ChildComponent } from './components/doshboard_element/dashboard/childs-space/child/child.component';
  import {MatTabsModule,} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
-import { TabContentComponent } from './components/doshboard_element/dashboard/childs-space/tab-content.component';
-import { ContentContainerDirective } from './components/doshboard_element/dashboard/childs-space/content-container.directive';
+import { TabContentComponent } from './components/doshboard_element/dashboard/childs-space/tab.setting/tab-content.component';
+import { ContentContainerDirective } from './components/doshboard_element/dashboard/childs-space/tab.setting/content-container.directive';
 import { TabService } from './Shared/services/tabs.service';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';

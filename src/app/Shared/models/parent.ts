@@ -4,8 +4,8 @@ export class Parent {
     
     nom: string;
     prenon : string;
-    mobile: string;
-    fix: string;
+    telephonePortable: string;
+    telephoneFixe: string;
 
     numeroDeRue: string;
     nomDeRue: string;
