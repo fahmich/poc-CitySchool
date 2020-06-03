@@ -15,12 +15,14 @@ import * as firebase from 'firebase/app';
 
 export class AuthService {
   userData: any;
+  //parents: Parent=new Parent();
   codedefamille: 'test'; // Save logged in user data
   codefamily:any;
   //Count:any;
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
+    
    
     public router: Router,
     public ngZone: NgZone, // NgZone service to remove outside scope warning
@@ -80,9 +82,11 @@ export class AuthService {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */     
         this.SetUserDatawithnewcodefamily(result.user);
+ 
 
-       this.userService.getUser(result.user.uid).subscribe((item:any)=>{
-           this.codedefamille=item.codefamille})   
+        this.userService.getUser(result.user.uid).subscribe((item:any)=>{
+           this.codedefamille=item.codefamille
+          })   
            localStorage.setItem('codedefamille', JSON.stringify(this.codedefamille));
 
         this.SendVerificationMail();
@@ -96,7 +100,7 @@ export class AuthService {
     // console.log('1111'+ this.increment)
     // const statsRef = this.afs.collection('users').doc('--stats--').ref;
     const batch = this.afs.firestore.batch();
-    batch.set( this.afs.collection('users').doc('--stats--').
+    batch.set( this.afs.collection('users').doc('--stats famille--').
         ref, { storyCount: firestore.FieldValue.increment(1) }, { merge: true });
     batch.commit();
 

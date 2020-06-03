@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ParentsService } from 'src/app/Shared/services/firebase-services/parent.service';
 import { Parent } from 'src/app/Shared/models/parent';
-@Component({
-  selector: 'app-autre',
-  templateUrl: './autre.component.html',
-  styleUrls: ['./autre.component.css']
-})
-export class AutreComponent implements OnInit {
 
+@Component({
+  selector: 'app-pere',
+  templateUrl: './pere.component.html',
+  styleUrls: ['./pere.component.css']
+})
+export class PereComponent implements OnInit {
   formParentsService: FormGroup;
   Parent: Parent = new Parent();
   uid:any
@@ -21,7 +21,7 @@ export class AutreComponent implements OnInit {
  ngOnInit(): void {
   this.formParentsService = new FormGroup({});
   this.uid=localStorage.getItem('uid')
-  this.getAutre('autre') 
+  this.getPere('pere') 
    this.formParentsService = this.createUserModelForm();
 
  }
@@ -43,10 +43,11 @@ export class AutreComponent implements OnInit {
    });
  }
 
-  getAutre(role) {
+  getPere(role) {
   this.parentsService.getParent(this.uid,role).subscribe((item:any)=>{
    this.Parent=item 
-    if(item !=undefined){
+   //console.log("pere",this.Parent)
+   if(item !=undefined){
     this.formParentsService = this.createUserModelForm();
    }
   })        
@@ -54,7 +55,7 @@ export class AutreComponent implements OnInit {
  
  onSubmit(formParentsService) {
    console.log(formParentsService.value)
-   this.parentsService.creatAutre(this.uid,formParentsService.value);
+   this.parentsService.creatPere(this.uid,formParentsService.value);
  }
 
  deleteParent(role) {
@@ -62,3 +63,5 @@ export class AutreComponent implements OnInit {
 }
  
 }
+ 
+ 

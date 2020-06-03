@@ -9,6 +9,9 @@
     white-space: nowrap;
     color: black !important;
 
+ 
+    
+    
 }
 .adress{
     margin-bottom: 7%;
@@ -65,3 +68,8 @@
   .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     background-color: #0056ff; 
   }
+
+  ::ng-deep  element.style {
+    margin-left: 25%;
+}
+  

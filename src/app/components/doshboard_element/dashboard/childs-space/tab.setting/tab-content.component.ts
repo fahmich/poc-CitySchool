@@ -1,11 +1,5 @@
-import {
-    Component,
-    Input,
-    ComponentFactoryResolver,
-    ViewChild,
-    OnInit
-  } from "@angular/core";
-  import { Tab } from 'src/app/Shared/models/tab.model';
+import {    Component,    Input,    ComponentFactoryResolver,    ViewChild,    OnInit  } from "@angular/core";
+import { Tab } from 'src/app/Shared/models/tab.model';
 import { ContentContainerDirective } from './content-container.directive';
 import { SkeletonComponent } from './skeleton.component';
    

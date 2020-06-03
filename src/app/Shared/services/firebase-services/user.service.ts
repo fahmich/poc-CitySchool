@@ -16,14 +16,13 @@ export class UserService {
   getUser(id:string) {      
     return this.firestore.collection("users").doc(id).valueChanges();
     }  
-    getStat() {      
-      return this.firestore.collection("users").doc('--stats--').valueChanges()
-      }  
- 
   updateUser(user){
     console.log(user);   
       return this.firestore.collection("users").doc(user.uid).set(user, { merge: true });   
   }
-
+  getStat() {      
+    return this.firestore.collection("users").doc('--stats famille--').valueChanges()
+    }
   
+    
 }

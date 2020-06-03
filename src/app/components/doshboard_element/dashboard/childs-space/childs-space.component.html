@@ -18,13 +18,9 @@
         (selectedTabChange)="tabChanged($event)"
       >
         <mat-tab *ngFor="let tab of tabs; let tabIndex = index">
-          <ng-template mat-tab-label 
-            > <span style="color: black"> {{ tab.title }}</span>
-            <i class="material-icons" (click)="removeTab(tabIndex)">
-              close
-            </i>
-          </ng-template>
-    
+          <ng-template mat-tab-label > 
+            <span style="color: black"> {{ tab.title }}</span>         
+          </ng-template>    
           <div>
             <app-tab-content [tab]="tab"></app-tab-content>
           </div>

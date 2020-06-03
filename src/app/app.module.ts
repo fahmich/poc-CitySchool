@@ -27,11 +27,10 @@ import { NavgbarComponent } from './components/doshboard_element/navgbar/navgbar
 import { ChildsSpaceComponent } from './components/doshboard_element/dashboard/childs-space/childs-space.component';
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChildComponent } from './components/doshboard_element/dashboard/childs-space/child/child.component';
-import { ParentComponent } from './components/doshboard_element/dashboard/parents-space/parent/parent.component';
-import {MatTabsModule,} from '@angular/material/tabs';
+ import {MatTabsModule,} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
-import { TabContentComponent } from './components/doshboard_element/dashboard/childs-space/tab-content.component';
-import { ContentContainerDirective } from './components/doshboard_element/dashboard/childs-space/content-container.directive';
+import { TabContentComponent } from './components/doshboard_element/dashboard/childs-space/tab.setting/tab-content.component';
+import { ContentContainerDirective } from './components/doshboard_element/dashboard/childs-space/tab.setting/content-container.directive';
 import { TabService } from './Shared/services/tabs.service';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
@@ -40,6 +39,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AutreComponent } from './components/doshboard_element/dashboard/parents-space/autre/autre.component';
 import { MereComponent } from './components/doshboard_element/dashboard/parents-space/mere/mere.component';
+import { PereComponent } from './components/doshboard_element/dashboard/parents-space/pere/pere.component';
 
 @NgModule({
   declarations: [
@@ -52,16 +52,15 @@ import { MereComponent } from './components/doshboard_element/dashboard/parents-
      ParentsSpaceComponent,
      ChildsSpaceComponent,
      ChildComponent,
-     ParentComponent,
-      TabContentComponent,
+     TabContentComponent,
      ContentContainerDirective,
      AutreComponent,
      MereComponent,
+     PereComponent,
      
   ],
   imports: [
     MatFormFieldModule,
- 
     MatSelectModule,
     MatIconModule,
     FormsModule,
