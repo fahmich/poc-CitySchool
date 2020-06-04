@@ -10,3 +10,4 @@ Mettre un bouton collapse/expand au niveau des informations de l'élève et ne g
 Ajouter le bouton rechercher, à coté du bouton "log out".
 Peut-on modifier l'onglet de l'enfant quand l'utilisateur modifie le prénom ?
 Gestion du code enfant, incrémenter le code dans le composant "childs-space.component"
+
