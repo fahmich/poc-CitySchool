@@ -72,3 +72,7 @@
     color: #0056ff; 
     min-width: 70px;
 }
+
+:host ::ng-deep .custom-control  {
+  margin-left: -20%  !important;
+}

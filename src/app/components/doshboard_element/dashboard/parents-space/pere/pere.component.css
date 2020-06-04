@@ -8,14 +8,11 @@
     align-items: center;
     white-space: nowrap;
     color: black !important;
-
- 
-    
     
 }
 .adress{
     margin-bottom: 7%;
-     padding: 1.4em;
+    padding: 1.4em;
     border: 1px solid #ecf0f3;
     border-radius: .42rem;
 }
@@ -72,4 +69,7 @@
   ::ng-deep  element.style {
     margin-left: 25%;
 }
-  
+ 
+:host ::ng-deep .custom-control  {
+  margin-left: -20%  !important;
+}

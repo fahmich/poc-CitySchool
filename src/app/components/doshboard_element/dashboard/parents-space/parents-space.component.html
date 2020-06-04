@@ -1,31 +1,16 @@
 <br>
 <div class="form-group  row "  >
   <!-- <label for="inputPassword" class="col-lg-6 col-form-label">Code famille</label> -->
-  <div class="col-lg-6">
+  <div id="codef">
     <!-- <input type="text" class="form-control" value= " "  > -->
     <p>code familler: <strong>{{code_famely}}</strong></p>  
   </div>
 </div>
-<!--  
-<div class="card">
-  <div class="card-headerinfo">
-    <button class="btn btnfamile btn-outline-primary" [ngClass]="{ 'active' : isValue == 1 }" (click)="toggle(1)"
-      type="button">pére</button>
-    <button class="btn btnfamile btn-outline-primary" [ngClass]="{ 'active' : isValue == 2 }" (click)="toggle(2)"
-      type="button">Mére</button>
-    <button class="btn btnfamile btn-outline-primary" [ngClass]="{ 'active' : isValue == 3 }" (click)="toggle(3)"
-      type="button">Autre</button>
-  </div>
-  <div class="card-body">
-    <app-pere *ngIf="isValue == 1"></app-pere>
-    <app-mere  *ngIf="isValue == 2"></app-mere>
-    <app-autre *ngIf="isValue == 3"></app-autre>
-  </div>
-</div> -->
+ 
 <div class="card">
    <div class="card-body">
     <mat-tab-group>
-      <mat-tab   label="Pere"><app-pere ></app-pere></mat-tab>
+      <mat-tab  label="Pere"><app-pere ></app-pere></mat-tab>
       <mat-tab label="Mere"> <app-mere  ></app-mere> </mat-tab>
       <mat-tab label="Autre"> <app-autre ></app-autre></mat-tab>
     </mat-tab-group>

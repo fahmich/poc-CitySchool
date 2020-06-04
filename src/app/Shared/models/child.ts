@@ -1,4 +1,7 @@
 export class child {
+  $key?: string;
+   idUser:string;
+   
     name: string;
     prenon : string;
     // datedenaissance:Date;
