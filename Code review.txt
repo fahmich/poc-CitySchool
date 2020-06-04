@@ -1,0 +1,12 @@
+Je pense que tu n'as pas tout merger dans le master !
+-----------------------------------------------------
+Modifications à apporter stp
+-----------------------------------------------------
+Beaucoup d'espace perdu en haut de la page.
+Scaler le tout à 80% ou même à 70%.
+Perte d'espace aussi au niveau du logo l'étudiant, il faudrait la supprimer pour l'instant.
+Se positionner sur un niveau par défaut sur le "Aucun" pour les formules et "Groupe" pour le format.
+Mettre un bouton collapse/expand au niveau des informations de l'élève et ne garder qu'une seule ligne.
+Ajouter le bouton rechercher, à coté du bouton "log out".
+Peut-on modifier l'onglet de l'enfant quand l'utilisateur modifie le prénom ?
+Gestion du code enfant, incrémenter le code dans le composant "childs-space.component"
