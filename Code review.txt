@@ -1,0 +1,5 @@
+Beaucoup d'éspace perdu en haut de la page.
+Scaler le tout à 80% ou même à 70%.
+Perte d'espace ausii au niveau du logo l'étudiant, il faudrais la supprimer pour l'instant.
+Se positionner sur une niveau par défaut sur le "Aucun" pour les formules et "Groupe" pour le format.
+Mettre un bouton collapse/expand au niveau des informations de l'élève et ne garder qu'une seule ligne
