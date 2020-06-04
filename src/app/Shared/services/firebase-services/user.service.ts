@@ -23,6 +23,8 @@ export class UserService {
   getStat() {      
     return this.firestore.collection("users").doc('--stats famille--').valueChanges()
     }
-  
+    getStatchild() {      
+      return this.firestore.collection("users").doc('--stats child--').valueChanges()
+      }
     
 }

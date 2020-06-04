@@ -73,3 +73,6 @@
     margin-left: 25%;
 }
   
+:host ::ng-deep .custom-control  {
+  margin-left: -20%  !important;
+}

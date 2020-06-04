@@ -15,20 +15,32 @@
                 </div>
               </div>
          
+         
               <div class="col-md-3 mb-3">
                 <label for="firstName">Date</label>
-                <input type="text" class="form-control" id="date" formControlName="date">
+                <input  type="date" class="form-control" id="date" formControlName="date">
+                
+                
                 <div class="invalid-feedback">
                   Valid Date is required.
                 </div>
               </div>
+              
 
               <div class="col-md-3 mb-3">
-                <label for="country">Niveau scolaire</label>
+                <!-- <label for="country">Niveau scolaire</label>
                 <select class="custom-select d-block w-100" id="country" formControlName="scolaire">
                   <option value="Terminal">Terminal</option>
-                  <option value="3">3 année</option>
+                  <option value="3 année">3 année</option>
+                </select> -->
+
+                <label for="country">Niveau scolaire</label>
+                <select class="custom-select d-block w-100" class="form-control"  formControlName="scolaire">
+                  <option selected  >Niveau...</option>
+                  <option value="Terminal" >Terminal</option>
+                  <option value="3 année"  >3 année</option>
                 </select>
+
                 <div class="invalid-feedback">
                   Please select a valid Niveau scolaire.
                 </div>
@@ -75,7 +87,7 @@
                             <!-- <h5 class="card-title">Special title treatment</h5> -->
                             <div class="content" fxLayout="column" fxLayoutAlign="start start" fxFlex>
                                 <div class="form-group row">
-                                    <label for="inputPassword" class="col-lg-1 col-form-label">Math</label>
+                                    <label for="inputPassword" class="col-lg-1 col-form-label"  >Math</label>
                                     <div class="col-lg-2">
                                         <input type="number" class="form-control-xs" formControlName="Math">
                                     </div>
@@ -122,18 +134,18 @@
                                     <div class="col-lg-9 row">
                                         <div class="col-lg-7">
                                             <select class="browser-default custom-select" >
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">One</option>
+                                                <option selected>Groupe SAM-AM-MTH-TER-01(3/7) </option>
+                                                <!-- <option value="1">One</option>
                                                 <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="3">Three</option> -->
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
                                             <select class="browser-default custom-select">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">One</option>
+                                                <option selected>Groupe 8AM-MTH-TER-01(3/7) </option>
+                                                <!-- <option value="1">One</option>
                                                 <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="3">Three</option> -->
                                             </select>
                                         </div>
                                     </div>
@@ -187,18 +199,18 @@
                                     <div class="col-lg-9 row">
                                         <div class="col-lg-7">
                                             <select class="browser-default custom-select">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">One</option>
+                                                <option selected>Groupe SAM-AM-FC-TER-01(3/7) </option>
+                                                <!-- <option value="1">One</option>
                                                 <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="3">Three</option> -->
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
                                             <select class="browser-default custom-select">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">One</option>
+                                                <option selected>Groupe 8AM-FC-TER-01(6/7) </option>
+                                                <!-- <option value="1">One</option>
                                                 <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="3">Three</option> -->
                                             </select>
                                         </div>
                                     </div>
@@ -251,18 +263,18 @@
                                     <div class="col-lg-9 row">
                                         <div class="col-lg-7">
                                             <select class="browser-default custom-select">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">One</option>
+                                                <option selected>Groupe SAM-AM-FR-TER-01(2/7) </option>
+                                                <!-- <option value="1">One</option>
                                                 <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="3">Three</option> -->
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
                                             <select class="browser-default custom-select">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">One</option>
+                                                <option selected>Groupe 8AM-fr-TER-01(3/7) </option>
+                                                <!-- <option value="1">One</option>
                                                 <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="3">Three</option> -->
                                             </select>
                                         </div>
                                     </div>
@@ -270,7 +282,7 @@
                             </div>
                             <div class="content" fxLayout="column" fxLayoutAlign="start start" fxFlex>
                                 <div class="form-group row">
-                                    <label for="inputPassword" class="col-lg-1 col-form-label">Anglais</label>
+                                    <label for="inputPassword" class="col-lg-1 col-form-label"  >Anglais</label>
                                     <div class="col-lg-2">
                                         <input type="number" class="form-control-xs" formControlName="Anglais">
                                     </div>
@@ -315,18 +327,18 @@
                                     <div class="col-lg-9 row">
                                         <div class="col-lg-7">
                                             <select class="browser-default custom-select">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">One</option>
+                                                <  <option selected>Groupe SAM-AM-ANG-TER-01(3/7) </option>
+                                                <!-- <option value="1">One</option>
                                                 <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="3">Three</option> -->
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
                                             <select class="browser-default custom-select">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">One</option>
+                                                <option selected>Groupe 8AM-ANG-TER-01(3/7) </option>
+                                                <!-- <option value="1">One</option>
                                                 <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="3">Three</option> -->
                                             </select>
                                         </div>
                                     </div>
@@ -454,11 +466,10 @@
           <br>
             
             <div class="row">
-                <div class="col-md-3 mb-3">              
-                 </div>
-                  <div class="col-md-3 mb-3">     
+               
+                  <div class="col-lg-8 ">     
                 </div>
-              <div class="col-md-3 mb-3">
+              <div class="col-lg-4">
       
                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group mr-2" role="group" aria-label="First group">
@@ -468,7 +479,7 @@
                     <!-- <i class="material-icons" (click)="removeTab(tabIndex)">
                         close
                       </i> -->
-                  <button type="button" class="btn btn-info" >supprimer</button>
+                  <button type="button" class="btn btn-info"  >supprimer</button>
                 </div>
               </div>
          

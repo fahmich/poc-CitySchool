@@ -6,8 +6,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import { Router } from "@angular/router";
 import { UserService } from './firebase-services/user.service';
 
-import * as firebase from 'firebase/app';
-  
+   
 @Injectable({
   providedIn: 'root'
 
