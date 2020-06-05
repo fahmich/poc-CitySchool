@@ -26,6 +26,7 @@ export class ChildsSpaceComponent  implements OnInit {
   }
 
   addNewTab() {
+    console.log('chiiiiiiiiiiiiiiiiiii')
     this.tabService.addTab(
       new Tab(ChildComponent, "New", { parent: "ChildsSpaceComponent" })
     );

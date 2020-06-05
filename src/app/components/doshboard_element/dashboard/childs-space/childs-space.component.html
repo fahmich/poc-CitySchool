@@ -1,31 +1,24 @@
- 
-     
-    <div class="container-fluid">
-      <div class="row">
-           <div class="col-lg-10"> </div> 
-           <div class="btn btn-sm ">  
-          
-              <button   (click)="addNewTab()" mat-fab color="primary">
-                  <mat-icon>add</mat-icon>
-                </button>
-          </div>
+<div class="container-fluid">
+
+  <mat-tab-group class="main-tab-group mt-2" [selectedIndex]="selectedTab" (selectedTabChange)="tabChanged($event)">
+    <mat-tab *ngFor="let tab of tabs; let tabIndex = index">
+      <ng-template mat-tab-label>
+        <span style="color: black"> {{ tab.title }}</span>
+      </ng-template>
+      <div>
+        <app-tab-content [tab]="tab"></app-tab-content>
       </div>
-   
-      <!-- <button mat-stroked-button (click)="addNewTab()">Add new tab</button> -->
-    
-      <mat-tab-group
-        class="main-tab-group mt-2"
-        [selectedIndex]="selectedTab"
-        (selectedTabChange)="tabChanged($event)"
-      >
-        <mat-tab *ngFor="let tab of tabs; let tabIndex = index">
-          <ng-template mat-tab-label > 
-            <span style="color: black"> {{ tab.title }}</span>         
-          </ng-template>    
-          <div>
-            <app-tab-content [tab]="tab"></app-tab-content>
-          </div>
-        </mat-tab>
-      </mat-tab-group>
+    </mat-tab>
+  </mat-tab-group>
+  <div class="row">
+    <div class="col-lg-10"> </div>
+    <div class="btn btn-sm "  style="right: 10% ;">
+      <button (click)="addNewTab()" mat-fab color="primary">
+        <mat-icon >add</mat-icon>
+      </button>
     </div>
-    
+  </div>
+   <!-- <i class="material-icons" (click)="removeTab(tabIndex)">
+                        close
+                      </i> -->
+</div>

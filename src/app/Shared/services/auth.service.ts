@@ -123,6 +123,22 @@ code2:any
 
     return this.codefamily 
   }
+    codeChild:any
+   generateCodechild() {
+      const batch = this.afs.firestore.batch();
+      batch.set( this.afs.collection('users').doc('--stats child--').
+          ref, { storyCount: firestore.FieldValue.increment(1) }, { merge: true });
+      batch.commit();   
+      var year = `${(new Date()).getFullYear()}`;
+      var code1 = year.substring(0,2);     
+      this.userService.getStatchild().subscribe((item:any)=>{this.code2=item.storyCount  
+            console.log('this item 1', this.code2)          
+           })     
+      console.log('this is  223',  this.code2 );
+       this.codeChild=`E-${code1}`+`-${ this.code2}`;
+      return this.codeChild 
+    }
+
   // Send email verfificaiton when new user sign up
   SendVerificationMail() {
     return this.afAuth.auth.currentUser.sendEmailVerification()
