@@ -1,18 +1,27 @@
  
         <nav class="navbar navbar-light bg-light">
+         
           <form class="form-inline">
             <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
           </form>
          
-          <button type="button" class="btn btn-primary mb-3 calendar-arrow lefta">
+     
+     <!-- <button type="button" class="btn btn-primary mb-3 calendar-arrow lefta">
               <span class="fa fa-arrow-left"></span>
-            </button>
+         </button> -->
           <div class="col-4 text-center">
-            <div class="blog-header-logo text-dark" href="#">Année scolaire :2020-2021</div>
+            <div class="blog-header-logo text-dark" href="#"> <strong>Année scolaire :</strong>  2020-2021</div>
           </div>
-          <button type="button" class="btn btn-primary mb-3 calendar-arrow lefta">
+          <!-- <button type="button" class="btn btn-primary mb-3 calendar-arrow lefta">
               <span class="fa fa-arrow-right"></span>
-            </button>
+          </button> -->
+  
+          <form class="form-inline waves-light" mdbWavesEffect>
+            <div class="md-form my-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            </div>
+        </form>
           <a class="btn btn-sm btn-outline-secondary" (click)="authService.SignOut()" href="#"> log out</a>
         </nav>
+ 

@@ -35,7 +35,10 @@ import { TabService } from './Shared/services/tabs.service';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import {MatExpansionModule} from '@angular/material/expansion';
  
+import {MatInputModule} from '@angular/material/input';
+
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AutreComponent } from './components/doshboard_element/dashboard/parents-space/autre/autre.component';
 import { MereComponent } from './components/doshboard_element/dashboard/parents-space/mere/mere.component';
@@ -68,6 +71,9 @@ import { PereComponent } from './components/doshboard_element/dashboard/parents-
     MatSlideToggleModule,
     MatButtonModule,
     MatTabsModule ,
+    MatExpansionModule,
+    MatInputModule ,
+
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),

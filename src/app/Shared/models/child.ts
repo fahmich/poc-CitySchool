@@ -1,35 +1,38 @@
 export class child {
   $key?: string;
-   idUser:string;
+  idUser:string;
    
-    name: string;
+  codeChild: string;
     prenon : string;
-    // datedenaissance:Date;
-    // mobile: string;
+    nom: string;
     genre: string;
-    // niveauscolaire: string;
+   // niveauscolaire: string;
    ///////////////////////
-    date: string;
+   date: string;
    scolaire: string;
-   nom: string;
-    Math: string;
+  
+   Math: string;
    formulepresentiel: string;
    format: string;
    formuleEnLinge: string;
-   Physiquechime: string;
-   physquechimie: string;
-   physquechimieformat: string;
-   physquechimieEnLinge: string;
+
+    Physiquechime: string;
+    formulepresentiel1: string;
+    format1: string;
+    formuleEnLinge1: string;
+
    Français: string;
-   checkboxfr: string;
-   Françaisformat: string;
-   FrançaisEnLinge: string;
+   formulepresentiel2: string;
+   format2: string;
+   formuleEnLinge2: string;
+   
    Anglais: string;
-   Anglaisch: string;
-   Anglaisformat: string;
-   AnglaisEnLinge: string;
+   formulepresentiel3: string;
+   format3: string;
+   formuleEnLinge3: string;
+  
    Lundi1: boolean = false;
-   Lundi  : false ;
+   Lundi  : boolean = false;
    Mardi : boolean = false;
    Mardi1: boolean = false;
    Mercredi: boolean = false;
