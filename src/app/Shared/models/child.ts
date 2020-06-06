@@ -3,7 +3,7 @@ export class child {
   idUser:string;
    
   codeChild: string;
-    prenon : string;
+  prenom : string;
     nom: string;
     genre: string;
    // niveauscolaire: string;

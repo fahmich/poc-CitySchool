@@ -74,8 +74,8 @@ pre {
 }
 
 .radio-toolbar input[type="radio"]:checked + label {
-    background-color: #2d77e0;
-    border-color: #2d77e0;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
     color: #fff
 }
 

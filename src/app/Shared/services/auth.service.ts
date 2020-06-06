@@ -67,7 +67,8 @@ export class AuthService {
            }
         })        
       })
-       });     
+       }); 
+      // this.SetUserData(result.user)    
       }).catch((error) => {
         window.alert(error.message)
       })
@@ -88,7 +89,7 @@ export class AuthService {
           })   
            localStorage.setItem('codedefamille', JSON.stringify(this.codedefamille));
 
-        this.SendVerificationMail();
+         this.SendVerificationMail();
        }).catch((error) => {
         window.alert(error.message)
       })
@@ -160,9 +161,8 @@ code2:any
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    console.log("AAA",user)
-   // return (user !== null && user.emailVerified !== false) ? true : false;
-     return (user !== null ) ? true : false;
+   //   return (user !== null && user.emailVerified !== false) ? true : false;
+    return (user !== null ) ? true : false;
 
   }
  
@@ -183,6 +183,34 @@ code2:any
       merge: true
     })
   }
+
+  SetUserData(user) {
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    const userData: User = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      emailVerified: user.emailVerified,
+      codefamille :  user.codefamille 
+
+    }
+
+    return userRef.set(userData, {
+      merge: true
+    })
+  }
+
+
+
+
+
+
+
+
+
+
+
   
   // Sign out
   SignOut() {

@@ -4,10 +4,11 @@ import { Tab } from '../models/tab.model';
 import { ChildComponent } from 'src/app/components/doshboard_element/dashboard/childs-space/child/child.component';
 @Injectable()
 export class TabService {
-    public tabs: Tab[] = [
-        new Tab(ChildComponent, "Comp1 View", { parent: "AppComponent" }),
-    ];
+    public tabs: Tab[] =
+        [new Tab(ChildComponent, "Comp1 View", { parent: "AppComponent" }),];
+
     public tabSub = new BehaviorSubject<Tab[]>(this.tabs);
+
     public removeTab(index: number) {
         this.tabs.splice(index, 1);
         if (this.tabs.length > 0) {
@@ -26,4 +27,5 @@ export class TabService {
         this.tabs.push(tab);
         this.tabSub.next(this.tabs);
     }
+    
 }

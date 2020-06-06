@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { child } from 'src/app/Shared/models/child';
 import { MatAccordion } from '@angular/material/expansion';
 import { ChildsService } from 'src/app/Shared/services/firebase-services/child.service';
-  
+
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
@@ -15,41 +15,42 @@ export class ChildComponent implements OnInit {
   @Input() data;
   userForm: FormGroup;
   child: child = new child();
+  
   tabchilds: any;
   tabchildsindex: any
 
-   uid:any
+  uid: any
   panelOpenState = false;
-  constructor( 
+  constructor(
     private formBuilder: FormBuilder,
-    public childsService:ChildsService 
-    )  { }
+    public childsService: ChildsService
+  ) { }
   selected = 'option2';
 
 
   ngOnInit(): void {
     this.userForm = new FormGroup({});
     this.userForm = this.createUserModelForm();
-    this.uid=localStorage.getItem('uid')
+    this.uid = localStorage.getItem('uid')
 
     this.getChilds()
 
   }
- 
-  getChilds(){
+
+  getChilds() {
     this.childsService.getChilds(this.uid).subscribe((item: any) => {
-       this.tabchilds = item
-       
+      this.tabchilds = item
+
       // if (item != undefined) {
       //   this.formParentsService = this.createUserModelForm();
-     // }
-     console.log("tacke ",item.lenght)
+      // }
+      console.log(item.length)
     })
-  } 
-  
+  }
+
   onSubmit(userForm) {
     console.log(userForm.value)
-     this.childsService.creatChild(this.uid,userForm.value);
+    this.childsService.creatChild(this.uid, userForm.value);
 
   }
 
@@ -57,11 +58,11 @@ export class ChildComponent implements OnInit {
     return this.formBuilder.group({
       // name: [this.child.name],
       nom: [this.child.nom],
-      prenon: [this.child.prenon],
+      prenom: [this.child.prenom],
       date: [this.child.date],
       scolaire: [this.child.scolaire = "Niveau..."],
       genre: [this.child.genre = "Masculin"],
-      
+
       Math: [this.child.Math],
       formulepresentiel: [this.child.formulepresentiel = "F-P-1"],
       format: [this.child.format = "F-1"],
@@ -101,6 +102,7 @@ export class ChildComponent implements OnInit {
 
     });
   }
+  opencard: boolean = false
   opencard1: boolean = false
   opencard2: boolean = false
   opencard3: boolean = false
@@ -108,17 +110,20 @@ export class ChildComponent implements OnInit {
 
 
   open(id) {
-    if (id == 'math') {
+    if (id == 'B1') {
       this.opencard1 = !this.opencard1
     }
-    else if (id == 'Physique') {
+    else if (id == 'B2') {
       this.opencard2 = !this.opencard2
     }
-    else if (id == 'francias') {
+    else if (id == 'B3') {
       this.opencard3 = !this.opencard3
-    } else if (id == 'anglais') {
+    } else if (id == 'B4') {
       this.opencard4 = !this.opencard4
+    } else if (id == 'C1') {
+      this.opencard = !this.opencard
     }
+
   }
 
 }

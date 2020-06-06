@@ -17,6 +17,7 @@ export class ChildsSpaceComponent  implements OnInit {
   ngOnInit() {
     this.tabService.tabSub.subscribe(tabs => {
       this.tabs = tabs;
+      console.log("this tabs nb:",tabs)
       this.selectedTab = tabs.findIndex(tab => tab.active);
     });
   }
@@ -28,7 +29,7 @@ export class ChildsSpaceComponent  implements OnInit {
   addNewTab() {
     console.log('chiiiiiiiiiiiiiiiiiii')
     this.tabService.addTab(
-      new Tab(ChildComponent, "New", { parent: "ChildsSpaceComponent" })
+      new Tab(ChildComponent, "New fils", { parent: "ChildsSpaceComponent" })
     );
   }
 
