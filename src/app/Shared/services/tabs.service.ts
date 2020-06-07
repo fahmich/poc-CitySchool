@@ -16,6 +16,7 @@ export class TabService {
         }
         this.tabSub.next(this.tabs);
     }
+    
     public addTab(tab: Tab) {
         for (let i = 0; i < this.tabs.length; i++) {
             if (this.tabs[i].active === true) {

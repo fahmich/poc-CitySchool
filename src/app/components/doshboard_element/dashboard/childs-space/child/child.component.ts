@@ -44,7 +44,7 @@ export class ChildComponent implements OnInit {
       // if (item != undefined) {
       //   this.formParentsService = this.createUserModelForm();
       // }
-      console.log(item.length)
+      console.log(item)
     })
   }
 

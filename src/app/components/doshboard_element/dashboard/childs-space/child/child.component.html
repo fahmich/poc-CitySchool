@@ -14,10 +14,11 @@
                             <div class="row" style="vertical-align: middle ; ">
                                 <div class="col-lg-10">
                                     <h4 class="mb-3">Information :</h4>
-                                     
-                                   <strong>prenom:</strong> {{(child.prenom) ? child.prenom : '   ...'}}  <strong>nom:</strong> {{(child.nom) ? child.nom : '   ...'}}
-                                </div>      
-                                
+
+                                    <strong>prenom:</strong> {{(child.prenom) ? child.prenom : '   ...'}}
+                                    <strong>nom:</strong> {{(child.nom) ? child.nom : '   ...'}}
+                                </div>
+
                                 <div class="btn btn-sm btn-outline-secondary" class="icon-2x">
                                     <button *ngIf="!opencard" (click)="open('C1')" mat-fab color="primary">
                                         <mat-icon>keyboard_arrow_down</mat-icon>
@@ -35,7 +36,8 @@
                                 <div class="row">
                                     <div class="col-md-3 mb-3">
                                         <label for="firstName">Prenom</label>
-                                        <input [(ngModel)]="child.prenom" type="text" class="form-control" id="prenom" formControlName="prenom">
+                                        <input [(ngModel)]="child.prenom" type="text" class="form-control" id="prenom"
+                                            formControlName="prenom">
                                         <div class="invalid-feedback">
                                             Valid Prenon is required.
                                         </div>
@@ -52,11 +54,45 @@
 
                                     <div class="col-md-3 mb-3">
                                         <label for="country">Niveau scolaire</label>
-                                        <select class="custom-select d-block w-100" class="form-control"
-                                            formControlName="scolaire">
+                                        <select class="custom-select d-block w-100" class="form-control" formControlName="scolaire">
                                             <option selected>Niveau...</option>
-                                            <option value="Terminal">Terminal</option>
-                                            <option value="3 année">3 année</option>
+
+                                            <option _ngcontent-gnj-c94="" value="TPS" ng-reflect-value="TPS">
+                                                Indéterminé </option>
+                                            <option _ngcontent-gnj-c94="" value="TPS" ng-reflect-value="TPS"> Maternelle
+                                                (TPS) </option>
+                                            <option _ngcontent-gnj-c94="" value="PS" ng-reflect-value="PS">Maternelle
+                                                (PS) </option>
+                                            <option _ngcontent-gnj-c94="" value="MS" ng-reflect-value="MS">Maternelle
+                                                (MS) </option>
+                                            <option _ngcontent-gnj-c94="" value="GS" ng-reflect-value="GS">Maternelle
+                                                (GS) </option>
+                                            <option _ngcontent-gnj-c94="" value="CP" ng-reflect-value="CP">Cours
+                                                préparatoire (CP) </option>
+                                            <option _ngcontent-gnj-c94="" value="CE1" ng-reflect-value="CE1">Cours
+                                                élémentaire 1 (CE1) </option>
+                                            <option _ngcontent-gnj-c94="" value="CE2" ng-reflect-value="CE2">Cours
+                                                élémentaire 2 (CE2) </option>
+                                            <option _ngcontent-gnj-c94="" value="CM1" ng-reflect-value="CM1">Cours moyen
+                                                1 (CM1) </option>
+                                            <option _ngcontent-gnj-c94="" value="CM2" ng-reflect-value="CM2">Cours moyen
+                                                2 (CM2) </option>
+                                            <option _ngcontent-gnj-c94="" value="SIX" ng-reflect-value="SIX">Sixième
+                                            </option>
+                                            <option _ngcontent-gnj-c94="" value="CIQ" ng-reflect-value="CIQ">Cinquième
+                                            </option>
+                                            <option _ngcontent-gnj-c94="" value="Quat" ng-reflect-value="Quat">Quatrième
+                                            </option>
+                                            <option _ngcontent-gnj-c94="" value="Trois" ng-reflect-value="Trois">
+                                                Troisième</option>
+                                            <option _ngcontent-gnj-c94="" value="SEC" ng-reflect-value="SEC">Seconde
+                                            </option>
+                                            <option _ngcontent-gnj-c94="" value="Prem" ng-reflect-value="Prem">Première
+                                            </option>
+                                            <option _ngcontent-gnj-c94="" value="TERM" ng-reflect-value="TERM">Terminal
+                                            </option>
+                                            <option _ngcontent-gnj-c94="" value="POSTBAC" ng-reflect-value="POSTBAC">
+                                                Post Bac</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Please select a valid Niveau scolaire.
@@ -67,7 +103,8 @@
                                 <div class="row">
                                     <div class="col-md-3 mb-3">
                                         <label for="lastName">Nom</label>
-                                        <input [(ngModel)]="child.nom" type="text" class="form-control" id="nom" formControlName="nom">
+                                        <input [(ngModel)]="child.nom" type="text" class="form-control" id="nom"
+                                            formControlName="nom">
                                         <div class="invalid-feedback">
                                             Valid Nom is required.
                                         </div>
@@ -226,8 +263,8 @@
                                             <label style="border-left: 0px" for="8">Trimestriel</label>
                                         </div>
                                         <div class="example-button-container">
-                                            <button *ngIf="!opencard2" (click)="open('B2')" mat-fab
-                                                color="primary" class="icon-2x ">
+                                            <button *ngIf="!opencard2" (click)="open('B2')" mat-fab color="primary"
+                                                class="icon-2x ">
                                                 <mat-icon>keyboard_arrow_down</mat-icon>
                                             </button>
                                             <button *ngIf="opencard2" (click)="open('B2')" mat-fab color="primary"
@@ -300,8 +337,8 @@
                                             <label style="border-left: 0px" for="88">Trimestriel</label>
                                         </div>
                                         <div class="example-button-container">
-                                            <button *ngIf="!opencard3" (click)="open('B3')" mat-fab
-                                                color="primary" class="icon-2x ">
+                                            <button *ngIf="!opencard3" (click)="open('B3')" mat-fab color="primary"
+                                                class="icon-2x ">
                                                 <mat-icon>keyboard_arrow_down</mat-icon>
                                             </button>
                                             <button *ngIf="opencard3" (click)="open('B3')" mat-fab color="primary"
@@ -557,13 +594,15 @@
                 <div class="col-lg-4">
 
                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                      
+
                         <div class="btn-group mr-2" role="group" aria-label="Second group">
                             <!-- <i class="material-icons" (click)="removeTab(tabIndex)">  close </i> -->
-                            <button type="button" class="btn btn-info">Je desinscrit {{(child.prenom) ? child.prenom : '   ...'}} </button>
+                            <button type="button" class="btn btn-info">Je desinscrit
+                                {{(child.prenom) ? child.prenom : '   ...'}} </button>
                         </div>
                         <div class="btn-group mr-2" role="group" aria-label="First group">
-                            <button type="button" class="btn btn-info" (click)="onSubmit(userForm)">j'inscrit {{(child.prenom) ? child.prenom : '   ...'}} </button>
+                            <button type="button" class="btn btn-info" (click)="onSubmit(userForm)">j'inscrit
+                                {{(child.prenom) ? child.prenom : '   ...'}} </button>
                         </div>
                     </div>
 
