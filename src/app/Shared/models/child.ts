@@ -6,45 +6,46 @@ export class child {
   prenom : string;
     nom: string;
     genre: string;
+    prix:number
    // niveauscolaire: string;
    ///////////////////////
    date: string;
    scolaire: string;
   
-   Math: string;
+   math: string;
    formulepresentiel: string;
    format: string;
    formuleEnLinge: string;
 
-    Physiquechime: string;
+    physiquechime: string;
     formulepresentiel1: string;
     format1: string;
     formuleEnLinge1: string;
 
-   Français: string;
+   français: string;
    formulepresentiel2: string;
    format2: string;
    formuleEnLinge2: string;
    
-   Anglais: string;
+   anglais: string;
    formulepresentiel3: string;
    format3: string;
    formuleEnLinge3: string;
   
-   Lundi1: boolean = false;
-   Lundi  : boolean = false;
-   Mardi : boolean = false;
-   Mardi1: boolean = false;
-   Mercredi: boolean = false;
-   Mercredi1: boolean = false;
-   Jeudi: boolean = false;
-   Jeudi1: boolean = false;
-   Vendredi1: boolean = false;
-   Vendredi: boolean = false;
-   Samedi: boolean = false;
-   Samedi1: boolean = false;
-   Dimanche: boolean = false;
-   Dimanche1: boolean = false;
+   lundi1: boolean = false;
+   lundi  : boolean = false;
+   mardi : boolean = false;
+   mardi1: boolean = false;
+   mercredi: boolean = false;
+   mercredi1: boolean = false;
+   jeudi: boolean = false;
+   jeudi1: boolean = false;
+   vendredi1: boolean = false;
+   vendredi: boolean = false;
+   samedi: boolean = false;
+   samedi1: boolean = false;
+   dimanche: boolean = false;
+   dimanche1: boolean = false;
  }
 
  

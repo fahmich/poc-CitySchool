@@ -1,12 +1,37 @@
 .example-h2 {
   margin: 10px;
 }
+#facturebutton{
+  /* border: 1px solid transparent; */
+  text-align:center;
+  /* line-height:70px ; */
+   /* width:200px ; */
+    border-radius: .70rem; 
+    font-size:  x-large ;
+    /* border-color: red; */
+    background-color:red ;
+    color :black; 
+}
+#addbutton{
+  border: 1px solid transparent;
+  text-align:center;
+  line-height:100px ;
+   width:200px ;
+   border-radius: .70rem; 
+    font-size:  x-large ;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: #fff;
+    color :black; 
+}
+
 .form-control-xs{
   display: block;
-  width: 35%;
+  /* width: 45%; */
   height: calc(1.5em + .75rem + 2px);
   padding: .375rem .75rem;
-  font-size: 1rem;
+  font-size: xx-small;
+  /* font-size: 1rem; */
   font-weight: 400;
   line-height: 1.5;
   color: #495057;

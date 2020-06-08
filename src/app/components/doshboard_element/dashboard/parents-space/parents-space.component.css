@@ -15,3 +15,17 @@
 #codef{
     margin-left: 20px; 
 }
+#facturebutton{
+    /* border: 1px solid transparent; */
+    position: relative;
+    left: 20%;
+    text-align:center;
+    /* line-height:70px ; */
+     width:200px ;
+      border-radius: .70rem; 
+      font-size:  x-large ;
+      border-color: red;
+      background-color:red ;
+      color :black; 
+      right: 50%; 
+  }
