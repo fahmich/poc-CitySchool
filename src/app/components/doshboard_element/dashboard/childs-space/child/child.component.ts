@@ -45,8 +45,8 @@ export class ChildComponent implements OnInit {
     this.childForm = this.createUserModelForm();
    }
  
-      console.log("this tabs item:" ,item)
-      console.log(this.child)
+     // console.log("this tabs item:" ,item)
+     // console.log(this.child)
     })
   }
 // ------------------------------

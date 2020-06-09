@@ -22,25 +22,23 @@ uid:any
   constructor(private tabService: TabService,  public childsService: ChildsService) {}
 
   ngOnInit() {
+    // ------entete tab dynamique
+    this.uid = localStorage.getItem('uid')
+    this.childsService.getChilds(this.uid).subscribe((item: any) => {     
+         console.log("this.item 1:" ,item)
+        this.tabsitems = [new Tab(ChildComponent,`${item[0].nom}(${item[0].codeChild})`, item[0])];
+        console.log("this.tabsitems 1:" ,this.tabsitems)
+   })
+// ------------
     this.tabService.tabSub.subscribe(tabs => {
       this.tabs = tabs
       // this.tabs=[this.tab1,this.tab2 ];
       
-          console.log("this tabs nb:",this.tabs[0].title)
+      console.log("this tabs nb 3:",this.tabs[0].title)
       this.selectedTab = tabs.findIndex(tab => tab.active);
-      console.log(" this.selectedTab:", this.selectedTab )
+      console.log(" this.selectedTab 2:", this.selectedTab )
     });
 
-
-// ------entete tab dynamique
-    this.uid = localStorage.getItem('uid')
-    this.childsService.getChilds(this.uid).subscribe((item: any) => {     
-      this.tabsitems = item   
-         console.log("this tabs item:" ,item)
-       // this.tabs= [new Tab(ChildComponent,`${item[0].nom}(${item[0].codeChild})`, { parent: "AppComponent" })];
-        this.tabs= [new Tab(ChildComponent,`${item[0].nom}(${item[0].codeChild})`, item[0])];
-   })
-// ------------
   }
 
   tabChanged(event) {
