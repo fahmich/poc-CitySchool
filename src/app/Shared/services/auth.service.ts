@@ -47,6 +47,16 @@ export class AuthService {
         this.code2 =item.storyCount
       }
     })
+    this.userService.getStatchild().subscribe((item: any) => {
+      console.log(item)
+      if(item==undefined){
+        this.code3=0
+      }else{
+        this.code3 =item.storyCountchilds
+      }
+    })
+
+
   }
  
   async SignIn(codefamille,email, password) {
@@ -108,6 +118,7 @@ export class AuthService {
   }
 test:any
 code2:any
+code3:any
   generateCodeFamily() {
     this.statedoc()
     
@@ -115,7 +126,7 @@ code2:any
     var code1 = year.substring(0,2);
    
     this.userService.getStat().subscribe((item:any)=>{this.code2=item.storyCount  
-          console.log('this item 1', this.code2)          
+          console.log('this CodeFamily p2', this.code2)          
          })
     
     console.log('this is  223',  this.code2 );
@@ -128,15 +139,16 @@ code2:any
    generateCodechild() {
       const batch = this.afs.firestore.batch();
       batch.set( this.afs.collection('users').doc('--stats child--').
-          ref, { storyCount: firestore.FieldValue.increment(1) }, { merge: true });
-      batch.commit();   
+          ref, { storyCountchilds: firestore.FieldValue.increment(1) }, { merge: true });
+      batch.commit(); 
+
       var year = `${(new Date()).getFullYear()}`;
       var code1 = year.substring(0,2);     
-      this.userService.getStatchild().subscribe((item:any)=>{this.code2=item.storyCount  
-            console.log('this item 1', this.code2)          
+      this.userService.getStatchild().subscribe((item:any)=>{this.code3=item.storyCountchilds  
+            console.log('this Codechild p3', this.code3)          
            })     
-      console.log('this is  223',  this.code2 );
-       this.codeChild=`E-${code1}`+`-${ this.code2}`;
+      console.log('this is  223',  this.code3 );
+       this.codeChild=`E-${code1}`+`-${ this.code3}`;
       return this.codeChild 
     }
 

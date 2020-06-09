@@ -36,18 +36,20 @@ export class ChildComponent implements OnInit {
     this.getChilds()
 
   }
-
+// -------doie etre parent child--------------------
   getChilds() {
     this.childsService.getChilds(this.uid).subscribe((item: any) => {
-      this.tabchilds = item
-
-      // if (item != undefined) {
-      //   this.formParentsService = this.createUserModelForm();
-      // }
-      console.log(item)
+   //this.child = item[0]
+   this.tabchilds= item
+   if(this.child  !=undefined){
+    this.childForm = this.createUserModelForm();
+   }
+ 
+      console.log("this tabs item:" ,item)
+      console.log(this.child)
     })
   }
-
+// ------------------------------
   onSubmit(childForm) {
     console.log(childForm.value)
     this.childsService.creatChild(this.uid, childForm.value);
@@ -56,34 +58,33 @@ export class ChildComponent implements OnInit {
 
   createUserModelForm() {
     return this.formBuilder.group({
-      // name: [this.child.name],
-      nom: [this.child.nom],
+       nom: [this.child.nom],
       prenom: [this.child.prenom],
       date: [this.child.date],
-      scolaire: [this.child.scolaire = "Niveau..."],
-      genre: [this.child.genre = "Masculin"],
-      prix: [this.child.prix = 0],
+      scolaire: [this.child.scolaire],
+      genre: [this.child.genre ],
+      prix: [this.child.prix],
 
       math: [this.child.math],
-      formulepresentiel: [this.child.formulepresentiel = "F-P-1"],
-      format: [this.child.format = "F-1"],
-      formuleEnLinge: [this.child.formuleEnLinge = "F-L-1"],
+      formulepresentiel: [this.child.formulepresentiel],
+      format: [this.child.format ],
+      formuleEnLinge: [this.child.formuleEnLinge ],
 
       physiquechime: [this.child.physiquechime],
-      formulepresentiel1: [this.child.formulepresentiel1 = "F-P-1"],
-      format1: [this.child.format1 = "F-1"],
-      formuleEnLinge1: [this.child.formuleEnLinge1 = "F-L-1"],
+      formulepresentiel1: [this.child.formulepresentiel1 ],
+      format1: [this.child.format1  ],
+      formuleEnLinge1: [this.child.formuleEnLinge1  ],
 
 
       français: [this.child.français],
-      formulepresentiel2: [this.child.formulepresentiel2 = "F-P-1"],
-      format2: [this.child.format2 = "F-1"],
-      formuleEnLinge2: [this.child.formuleEnLinge2 = "F-L-1"],
+      formulepresentiel2: [this.child.formulepresentiel2 ],
+      format2: [this.child.format2 ],
+      formuleEnLinge2: [this.child.formuleEnLinge2  ],
 
       anglais: [this.child.anglais],
-      formulepresentiel3: [this.child.formulepresentiel3 = "F-P-1"],
-      format3: [this.child.format3 = "F-1"],
-      formuleEnLinge3: [this.child.formuleEnLinge3 = "F-L-1"],
+      formulepresentiel3: [this.child.formulepresentiel3  ],
+      format3: [this.child.format3 ],
+      formuleEnLinge3: [this.child.formuleEnLinge3  ],
 
 
       lundi: [this.child.lundi],

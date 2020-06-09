@@ -5,47 +5,46 @@ export class child {
   codeChild: string;
   prenom : string;
     nom: string;
-    genre: string;
-    prix:number
-   // niveauscolaire: string;
-   ///////////////////////
-   date: string;
-   scolaire: string;
+    genre: string = "Masculin";
+    prix:number =0;
+ 
+   date: Date;
+   scolaire: string = "Niveau...";
   
-   math: string;
-   formulepresentiel: string;
-   format: string;
-   formuleEnLinge: string;
+   math: number;
+   formulepresentiel: string = "F-P-1";
+   format: string = "F-1";
+   formuleEnLinge: string = "F-L-1";
 
-    physiquechime: string;
-    formulepresentiel1: string;
-    format1: string;
-    formuleEnLinge1: string;
+    physiquechime: number;
+    formulepresentiel1: string = "F-P-1";
+    format1: string = "F-1";
+    formuleEnLinge1: string = "F-L-1";
 
-   français: string;
-   formulepresentiel2: string;
-   format2: string;
-   formuleEnLinge2: string;
+   français: number ;
+   formulepresentiel2: string = "F-P-1";
+   format2: string = "F-1";
+   formuleEnLinge2: string= "F-L-1";
    
-   anglais: string;
-   formulepresentiel3: string;
-   format3: string;
-   formuleEnLinge3: string;
+   anglais: number;
+   formulepresentiel3: string = "F-P-1";
+   format3: string = "F-1";
+   formuleEnLinge3: string= "F-L-1";
   
-   lundi1: boolean = false;
-   lundi  : boolean = false;
-   mardi : boolean = false;
-   mardi1: boolean = false;
-   mercredi: boolean = false;
-   mercredi1: boolean = false;
-   jeudi: boolean = false;
-   jeudi1: boolean = false;
-   vendredi1: boolean = false;
-   vendredi: boolean = false;
-   samedi: boolean = false;
-   samedi1: boolean = false;
-   dimanche: boolean = false;
-   dimanche1: boolean = false;
+   lundi1: boolean  ;
+   lundi  : boolean  ;
+   mardi : boolean  ;
+   mardi1: boolean  ;
+   mercredi: boolean  ;
+   mercredi1: boolean ;
+   jeudi: boolean  ;
+   jeudi1: boolean ;
+   vendredi1: boolean  ;
+   vendredi: boolean  ;
+   samedi: boolean  ;
+   samedi1: boolean  ;
+   dimanche: boolean ;
+   dimanche1: boolean  ;
  }
 
  

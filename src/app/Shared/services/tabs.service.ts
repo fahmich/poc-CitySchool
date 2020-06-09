@@ -2,12 +2,15 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { Tab } from '../models/tab.model';
 import { ChildComponent } from 'src/app/components/doshboard_element/dashboard/childs-space/child/child.component';
+import { ChildsService } from './firebase-services/child.service';
 @Injectable()
 export class TabService {
     public tabs: Tab[] =
-        [new Tab(ChildComponent, "Comp1 View", { parent: "AppComponent" }),];
+        [new Tab(ChildComponent, "Comp1 View", { parent: "AppComponent" }),
+     ];
+  
 
-    public tabSub = new BehaviorSubject<Tab[]>(this.tabs);
+     public tabSub = new BehaviorSubject<Tab[]>(this.tabs);
 
     public removeTab(index: number) {
         this.tabs.splice(index, 1);

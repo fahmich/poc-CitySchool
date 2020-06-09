@@ -29,10 +29,12 @@ export class ChildsService {
     return new Promise<any>((resolve, reject) => {
       const id = this.afs.createId();
       child.$key = id
-      child.idUser = this.authService.userData.uid;
-      // this.codeChild=this.generateCodechild() 
-      this.codeChild = this.authService.generateCodechild()
-      this.afs.collection("users").doc(idNameSpace).collection("childs").doc(this.codeChild).set(child, { merge: true });
+      child.idUser = this.authService.userData.uid;     
+      this.codeChild = this.authService.generateCodechild();
+      child.codeChild= this.codeChild;
+      console.log("generateCodechild=",this.authService.generateCodechild())
+
+      this.afs.collection("users").doc(idNameSpace).collection("childs").doc(this.codeChild).set(JSON.parse(JSON.stringify(child)));
 
     });
   }

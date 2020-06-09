@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ParentsService } from 'src/app/Shared/services/firebase-services/parent.service';
 import { Parent } from 'src/app/Shared/models/parent';
+import { ValidationdataService } from 'src/app/Shared/services/firebase-services/validation.dataStore.service';
 
 @Component({
   selector: 'app-pere',
@@ -14,7 +15,8 @@ export class PereComponent implements OnInit {
   uid: any
   constructor(
     private formBuilder: FormBuilder,
-    public parentsService: ParentsService
+    public parentsService: ParentsService,
+    public validationdataService:ValidationdataService
   ) {
   }
 

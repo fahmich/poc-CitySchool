@@ -11,6 +11,7 @@
  
 :host ::ng-deep .mat-tab-body-content {
     overflow: hidden !important;
+    
 }
 #codef{
     margin-left: 20px; 
@@ -29,3 +30,4 @@
       color :black; 
       right: 50%; 
   }
+ 
