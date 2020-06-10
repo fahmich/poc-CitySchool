@@ -659,8 +659,10 @@
                     <div  class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                         <div id="addbutton" class="btn-group mr-2" role="group" aria-label="Second group">
                             <!-- <i class="material-icons" (click)="removeTab(tabIndex)">  close </i> -->
-                            <button type="button" class="btn btn-info">Je desinscrit
+                            <button type="button" class="btn btn-info"  >Je desinscrit
                                 {{(child.prenom) ? child.prenom : '   ...'}} </button>
+                                <!-- <button type="button" class="btn btn-info" (click)="deleteChild()">Je desinscrit
+                                    {{(child.prenom) ? child.prenom : '   ...'}} </button> -->
                         </div>
                         <div  id="addbutton" class="btn-group mr-2" role="group" aria-label="First group">
                             <button type="button" class="btn btn-info" (click)="onSubmit(childForm)">j'inscrit

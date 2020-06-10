@@ -40,7 +40,7 @@ export class AuthService {
       }
     })
     this.userService.getStat().subscribe((item: any) => {
-      console.log(item)
+      // console.log(item)
       if(item==undefined){
         this.code2=0
       }else{
@@ -48,7 +48,7 @@ export class AuthService {
       }
     })
     this.userService.getStatchild().subscribe((item: any) => {
-      console.log(item)
+      // console.log(item)
       if(item==undefined){
         this.code3=0
       }else{
@@ -129,7 +129,7 @@ code3:any
           console.log('this CodeFamily p2', this.code2)          
          })
     
-    console.log('this is  223',  this.code2 );
+    // console.log('this is  223',  this.code2 );
     //new Promise( resolve => setTimeout(resolve, 5000));
     this.codefamily=`F-${code1}`+`-${ this.code2}`;
 
@@ -145,9 +145,9 @@ code3:any
       var year = `${(new Date()).getFullYear()}`;
       var code1 = year.substring(0,2);     
       this.userService.getStatchild().subscribe((item:any)=>{this.code3=item.storyCountchilds  
-            console.log('this Codechild p3', this.code3)          
+            // console.log('this Codechild p3', this.code3)          
            })     
-      console.log('this is  223',  this.code3 );
+      // console.log('this is  223',  this.code3 );
        this.codeChild=`E-${code1}`+`-${ this.code3}`;
       return this.codeChild 
     }

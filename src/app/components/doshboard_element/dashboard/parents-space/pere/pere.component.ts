@@ -55,7 +55,7 @@ export class PereComponent implements OnInit {
   }
 
   onSubmit(formParentsService) {
-    console.log(formParentsService.value)
+    // console.log(formParentsService.value)
     this.parentsService.creatPere(this.uid, formParentsService.value);
   }
 

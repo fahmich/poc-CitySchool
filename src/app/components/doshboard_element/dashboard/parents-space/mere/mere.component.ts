@@ -56,7 +56,7 @@ export class MereComponent implements OnInit {
    }
   
    onSubmit(formParentsService) {
-     console.log(formParentsService.value)
+    //  console.log(formParentsService.value)
      this.parentsService.creatMere(this.uid,formParentsService.value);
    }
 

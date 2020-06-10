@@ -15,6 +15,8 @@ import { SkeletonComponent } from './skeleton.component';
     constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
   
     ngOnInit() {
+ 
+
       const tab: Tab = this.tab;
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
         tab.component
