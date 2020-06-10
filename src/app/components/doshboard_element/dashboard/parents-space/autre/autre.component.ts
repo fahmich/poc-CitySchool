@@ -53,7 +53,7 @@ export class AutreComponent implements OnInit {
  }
  
  onSubmit(formParentsService) {
-   console.log(formParentsService.value)
+  //  console.log(formParentsService.value)
    this.parentsService.creatAutre(this.uid,formParentsService.value);
  }
 

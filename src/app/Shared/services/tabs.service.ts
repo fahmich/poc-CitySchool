@@ -6,9 +6,7 @@ import { ChildsService } from './firebase-services/child.service';
 @Injectable()
 export class TabService {
     
-    public tabs: Tab[] =
-        [new Tab(ChildComponent, "Comp1 View", { parent: "AppComponent" }),
-     ];
+    public tabs: Tab[] =  [  ];
   
 
      public tabSub = new BehaviorSubject<Tab[]>(this.tabs);

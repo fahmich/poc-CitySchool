@@ -17,7 +17,7 @@ export class UserService {
     return this.firestore.collection("users").doc(id).valueChanges();
     }  
   updateUser(user){
-    console.log(user);   
+    // console.log(user);   
       return this.firestore.collection("users").doc(user.uid).set(user, { merge: true });   
   }
   getStat() {      

@@ -29,8 +29,11 @@ export class ChildComponent implements OnInit {
 
 
   ngOnInit(): void {
+  
+
     this.childForm = new FormGroup({});
-    this.childForm = this.createUserModelForm();
+    this.child=this.data
+        this.childForm = this.createUserModelForm();
     this.uid = localStorage.getItem('uid')
 
     this.getChilds()
@@ -44,21 +47,22 @@ export class ChildComponent implements OnInit {
    if(this.child  !=undefined){
     this.childForm = this.createUserModelForm();
    }
- 
      // console.log("this tabs item:" ,item)
      // console.log(this.child)
     })
   }
 // ------------------------------
   onSubmit(childForm) {
-    console.log(childForm.value)
-    this.childsService.creatChild(this.uid, childForm.value);
-
+    //console.log(childForm.value)
+    this.childsService.creatChild(this.uid, childForm.value,this.child.codeChild);
+  }
+  deleteChild() {
+    this.childsService.deleteChild(this.uid,this.child.codeChild);
   }
 
   createUserModelForm() {
     return this.formBuilder.group({
-       nom: [this.child.nom],
+      nom: [this.child.nom],
       prenom: [this.child.prenom],
       date: [this.child.date],
       scolaire: [this.child.scolaire],
@@ -75,7 +79,6 @@ export class ChildComponent implements OnInit {
       format1: [this.child.format1  ],
       formuleEnLinge1: [this.child.formuleEnLinge1  ],
 
-
       français: [this.child.français],
       formulepresentiel2: [this.child.formulepresentiel2 ],
       format2: [this.child.format2 ],
@@ -85,7 +88,6 @@ export class ChildComponent implements OnInit {
       formulepresentiel3: [this.child.formulepresentiel3  ],
       format3: [this.child.format3 ],
       formuleEnLinge3: [this.child.formuleEnLinge3  ],
-
 
       lundi: [this.child.lundi],
       lundi1: [this.child.lundi1],
