@@ -23,21 +23,44 @@ export class ChildsSpaceComponent implements OnInit {
 
   ngOnInit() {
     console.log("chi")
+   this.tabs = []
+   this.tabs=[...this.tabs]
     this.uid = localStorage.getItem('uid')
     this.childsService.getChilds(this.uid).subscribe((item: any) => {
       if (item.length == 0) {
         this.tabs.push(new Tab(ChildComponent, "ajouter fils", this.child)
         );
       }
-      for (let i = 0; i < item.length; i++) {
-       this.tabs.push(new Tab(ChildComponent, `${item[i].nom}(${item[i].codeChild})`, item[i]));
-        // this.tabs=[...this.tabs,  new Tab(ChildComponent, `${item[i].nom}(${item[i].codeChild})`, item[i])  ] ;
-       }
+
+   if(this.tabs.length<item.length) {
+    for (let i = 0; i < item.length; i++) {
+    this.tabs.push(new Tab(ChildComponent, `${item[i].nom}(${item[i].codeChild})`, item[i]));
+    //  this.tabs=[...this.tabs,  new Tab(ChildComponent, `${item[i].nom}(${item[i].codeChild})`, item[i])  ] ;
+    }
+  }else{
+    this.tabs=[]
+    for (let i = 0; i < item.length; i++) {
+      this.tabs.push(new Tab(ChildComponent, `${item[i].nom}(${item[i].codeChild})`, item[i]));
+      }
+
+    }
+
       console.log("this.tabs", this.tabs)
     })
+    // this.tabService.tabSub.subscribe(tabs => {
+    //   console.log("tabSub",tabs)
+    //   this.tabs = tabs
+    //   this.selectedTab = tabs.findIndex(tab => tab.active);
+    // });
+   this.tabstatus()
+  }
+
+  tabstatus(){
     this.tabService.tabSub.subscribe(tabs => {
       console.log("tabSub",tabs)
+      
       this.tabs = tabs
+      console.log("tabSub this.tabs",this.tabs)
       this.selectedTab = tabs.findIndex(tab => tab.active);
     });
   }
@@ -53,6 +76,7 @@ export class ChildsSpaceComponent implements OnInit {
 
   removeTab(index: number): void {
     this.tabService.removeTab(index);
+    console.log(index)
   }
 }
 

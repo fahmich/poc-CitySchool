@@ -36,21 +36,21 @@ export class ChildComponent implements OnInit {
         this.childForm = this.createUserModelForm();
     this.uid = localStorage.getItem('uid')
 
-    this.getChilds()
+ //   this.getChilds()
 
   }
 // -------doie etre parent child--------------------
-  getChilds() {
-    this.childsService.getChilds(this.uid).subscribe((item: any) => {
-   //this.child = item[0]
-   this.tabchilds= item
-   if(this.child  !=undefined){
-    this.childForm = this.createUserModelForm();
-   }
-     // console.log("this tabs item:" ,item)
-     // console.log(this.child)
-    })
-  }
+  // getChilds() {
+  //   this.childsService.getChilds(this.uid).subscribe((item: any) => {
+  //  //this.child = item[0]
+  //  this.tabchilds= item
+  //  if(this.child  !=undefined){
+  //   this.childForm = this.createUserModelForm();
+  //  }
+  //    // console.log("this tabs item:" ,item)
+  //    // console.log(this.child)
+  //   })
+  // }
 // ------------------------------
   onSubmit(childForm) {
     //console.log(childForm.value)
