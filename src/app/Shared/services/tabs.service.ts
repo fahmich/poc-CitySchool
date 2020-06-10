@@ -10,12 +10,16 @@ export class TabService {
   
 
      public tabSub = new BehaviorSubject<Tab[]>(this.tabs);
-
+     
     public removeTab(index: number) {
         this.tabs.splice(index, 1);
+        console.log("1remove",index)
+        console.log("1remove",this.tabs)
+
         if (this.tabs.length > 0) {
             this.tabs[this.tabs.length - 1].active = true;
         }
+        console.log("1remove",this.tabSub)
         this.tabSub.next(this.tabs);
     }
     
@@ -25,6 +29,8 @@ export class TabService {
                 this.tabs[i].active = false;
             }
         }
+        console.log("2add", this.tabs)
+
         tab.id = this.tabs.length + 1;
         tab.active = true;
         this.tabs.push(tab);

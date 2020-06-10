@@ -28,7 +28,7 @@ export class ChildsService {
   creatChild(idNameSpace, child: child,codeChild) {
     return new Promise<any>((resolve, reject) => {
       const id = this.afs.createId();
-      console.log("a",codeChild)
+     // console.log("a",codeChild)
       // console.log("generateCodechild=",this.authService.generateCodechild())
      if(codeChild==undefined){
 
