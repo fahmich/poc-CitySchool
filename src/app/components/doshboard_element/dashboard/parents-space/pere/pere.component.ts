@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChange, Input } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ParentsService } from 'src/app/Shared/services/firebase-services/parent.service';
 import { Parent } from 'src/app/Shared/models/parent';
@@ -9,7 +9,7 @@ import { ValidationdataService } from 'src/app/Shared/services/firebase-services
   templateUrl: './pere.component.html',
   styleUrls: ['./pere.component.css']
 })
-export class PereComponent implements OnInit {
+export class PereComponent implements OnInit ,  OnChanges {
   formParentsService: FormGroup;
   Parent: Parent = new Parent();
   uid: any
@@ -19,12 +19,23 @@ export class PereComponent implements OnInit {
     public validationdataService:ValidationdataService
   ) {
   }
-
+  @Input() major: number;
+  @Input() minor: number;
+  ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
+    console.log(changes)
+     
+  }
   ngOnInit(): void {
     this.formParentsService = new FormGroup({});
     this.uid = localStorage.getItem('uid')
     this.getPere('pere')
     this.formParentsService = this.createUserModelForm();
+    this.validationdataService.validation$.subscribe((item: any) => {
+       if (item != undefined) {
+ console.log(this.formParentsService.value)
+ this.parentsService.creatPere(this.uid, this.formParentsService.value);
+}
+    })
 
   }
   createUserModelForm() {
@@ -48,6 +59,8 @@ export class PereComponent implements OnInit {
   getPere(role) {
     this.parentsService.getParent(this.uid, role).subscribe((item: any) => {
       this.Parent = item
+      console.log(item)
+
       if (item != undefined) {
         this.formParentsService = this.createUserModelForm();
       }

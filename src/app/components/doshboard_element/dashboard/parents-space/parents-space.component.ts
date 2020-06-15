@@ -2,6 +2,7 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { ValidationdataService } from 'src/app/Shared/services/firebase-services/validation.dataStore.service';
 
 @Component({
   selector: 'app-parents-space',
@@ -15,6 +16,7 @@ export class ParentsSpaceComponent implements OnInit {
     public router: Router,
     public ngZone: NgZone,
     public afAuth: AngularFireAuth, // Inject Firebase auth service
+    public validationdataService:ValidationdataService
 
   ) { }
 
@@ -31,5 +33,10 @@ export class ParentsSpaceComponent implements OnInit {
    ngOnInit(): void {
     this.code_famely=localStorage.getItem('code_famely')
    }
-
+   i=0
+validateur(){
+this.i++
+console.log(this.i++)
+  this.validationdataService.setvalidation(this.i++)
+}
 }

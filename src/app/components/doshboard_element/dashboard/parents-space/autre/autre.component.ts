@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ParentsService } from 'src/app/Shared/services/firebase-services/parent.service';
 import { Parent } from 'src/app/Shared/models/parent';
+import { ValidationdataService } from 'src/app/Shared/services/firebase-services/validation.dataStore.service';
 @Component({
   selector: 'app-autre',
   templateUrl: './autre.component.html',
@@ -14,7 +15,9 @@ export class AutreComponent implements OnInit {
   uid:any
   constructor(
    private formBuilder: FormBuilder,
-   public parentsService:ParentsService  
+   public parentsService:ParentsService  ,
+   public validationdataService:ValidationdataService
+
  ) {   
  }
 
@@ -23,6 +26,14 @@ export class AutreComponent implements OnInit {
   this.uid=localStorage.getItem('uid')
   this.getAutre('autre') 
    this.formParentsService = this.createUserModelForm();
+   this.validationdataService.validation$.subscribe((item: any) => {
+    if (item != undefined) {
+console.log(this.formParentsService.value)
+this.parentsService.creatAutre(this.uid,this.formParentsService.value);
+
+}
+ })
+
 
  }
  createUserModelForm() {

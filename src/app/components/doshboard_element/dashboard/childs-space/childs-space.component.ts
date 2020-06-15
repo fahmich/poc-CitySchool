@@ -32,7 +32,7 @@ export class ChildsSpaceComponent implements OnInit {
         );
       }
 
-   if(this.tabs.length<=item.length) {
+   if(this.tabs.length< item.length) {
     for (let i = 0; i < item.length; i++) {
     this.tabs.push(new Tab(ChildComponent, `${item[i].nom}(${item[i].codeChild})`, item[i]));
     //  this.tabs=[...this.tabs,  new Tab(ChildComponent, `${item[i].nom}(${item[i].codeChild})`, item[i])  ] ;
