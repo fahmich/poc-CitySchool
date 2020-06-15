@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ParentsService } from 'src/app/Shared/services/firebase-services/parent.service';
 import { Parent } from 'src/app/Shared/models/parent';
+import { ValidationdataService } from 'src/app/Shared/services/firebase-services/validation.dataStore.service';
 
 @Component({
   selector: 'app-mere',
@@ -15,7 +16,9 @@ export class MereComponent implements OnInit {
     uid:any
     constructor(
      private formBuilder: FormBuilder,
-     public parentsService:ParentsService  
+     public parentsService:ParentsService  ,
+     public validationdataService:ValidationdataService
+
    ) {   
    }
   
@@ -24,6 +27,12 @@ export class MereComponent implements OnInit {
     this.uid=localStorage.getItem('uid')
     this.getMere('mere') 
     this.formParentsService = this.createUserModelForm();
+    this.validationdataService.validation$.subscribe((item: any) => {
+      if (item != undefined) {
+console.log(this.formParentsService.value)
+this.parentsService.creatMere(this.uid,this.formParentsService.value);
+}
+   })
  
    }
    createUserModelForm() {

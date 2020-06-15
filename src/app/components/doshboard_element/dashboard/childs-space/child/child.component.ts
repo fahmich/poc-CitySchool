@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { child } from 'src/app/Shared/models/child';
 import { MatAccordion } from '@angular/material/expansion';
 import { ChildsService } from 'src/app/Shared/services/firebase-services/child.service';
+import { ValidationdataService } from 'src/app/Shared/services/firebase-services/validation.dataStore.service';
 
 @Component({
   selector: 'app-child',
@@ -23,7 +24,9 @@ export class ChildComponent implements OnInit {
   panelOpenState = false;
   constructor(
     private formBuilder: FormBuilder,
-    public childsService: ChildsService
+    public childsService: ChildsService,
+    public validationdataService:ValidationdataService
+
   ) { }
   selected = 'option2';
 
@@ -35,7 +38,16 @@ export class ChildComponent implements OnInit {
     this.child=this.data
         this.childForm = this.createUserModelForm();
     this.uid = localStorage.getItem('uid')
+    console.log(this.validationdataService.getvalidationpere())
 
+  //   this.validationdataService.validation$.subscribe((item: any) => {
+  //     if (item != undefined) {
+  //       console.log("childddddddddd")
+  //   this.childsService.creatChild(this.uid, this.childForm.value,this.child.codeChild);
+
+  
+  // }
+  //  })
  //   this.getChilds()
 
   }

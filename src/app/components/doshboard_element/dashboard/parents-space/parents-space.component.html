@@ -10,12 +10,12 @@
 <div class="card">
    <div class="card-body">
     <mat-tab-group>
-      <mat-tab  label="Pére"><app-pere ></app-pere></mat-tab>
+      <mat-tab  label="Pére" ><app-pere ></app-pere></mat-tab>
       <mat-tab label="Mére"> <app-mere  ></app-mere> </mat-tab>
       <mat-tab label="Autre"> <app-autre ></app-autre></mat-tab>
     </mat-tab-group>
   </div>
-  <button type="button" id="facturebutton"  class="btn btn-primary btn-lg btn-block fa fa-check"> Validation administration  </button>
+  <button type="button" id="facturebutton" (click)="validateur()" class="btn btn-primary btn-lg btn-block fa fa-check"> Validation administration  </button>
 
 </div>
 
